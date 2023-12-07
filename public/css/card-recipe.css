@@ -1,0 +1,74 @@
+.card_recipe {
+    background-size: cover;
+    width: 100%;
+    overflow: hidden;
+    
+}
+
+.card_recipe_content {
+    padding-bottom: 120px;
+    display: inline-block;
+}
+.card_recipe .card_recipe_content .head_title h3 {
+    color: var(--title-color);
+}
+.card_recipe .card_recipe_content .head_title h4 {
+    color: var(--title-color);
+}
+
+.head_title {
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+
+.single_card_recipe_text {
+    display: inline-block;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.single_card_recipe_text img {
+    width: 100%;
+    transition: transform 0.3s ease-in-out;
+}
+.single_card_recipe_text:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+.single_card_recipe_text:hover img {
+    transform: scale(1.1);
+}
+
+.single_card_recipe_text:hover .card_recipe_images_overlay {
+    top: 28px;
+    left: 14px;
+    opacity: 1;
+    transition: top 0.3s ease, left 0.3s ease, opacity 0.3s ease;
+}
+
+.card_recipe_images_overlay {
+    width: 90%;
+    height: 80%;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    margin: 0 auto;
+    top: -100%;
+    left: 14px;
+    position: absolute;
+    opacity: 0;
+    transition: top 0.3s ease, left 0.3s ease, opacity 0.3s ease;
+}
+.card_recipe_images_overlay h6 {
+    text-transform: uppercase;
+    color: var(--text-color);
+    font-size: 1.3rem;
+    line-height: 2rem;
+}
+
+.card_recipe_images_overlay p.card_recipe_text {
+    /* font-size: 2.5725rem; */
+    color: var(--text-color);
+    line-height: 1rem;
+}

@@ -1,0 +1,35 @@
+.abouts {
+    background-color: var(--text-color);
+    color: var(--icons-color);
+    overflow: hidden;
+}
+.abouts_content {
+    margin: 80px 50px 80px 250px;
+}
+
+.abouts h3,
+.abouts h4 {
+    color: var(--title-color);
+}
+
+.abouts a.btn {
+    background-color: var(--btn-color);
+    color: var(--text-color);
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.abouts a.btn:hover {
+    background-color: darken(var(--btn-color), 10%);
+}
+
+.single_abouts_text.slideInLeft {
+    padding: 20px;
+    background-color: rgba(163, 95, 27, 0.526);
+    width: 30rem;
+    /* margin-left: */
+}
+.single_abouts_text img {
+    width: 100%;
+    height: 100%;
+}

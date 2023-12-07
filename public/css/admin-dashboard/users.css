@@ -1,0 +1,78 @@
+/* user list table css */
+.user-management-title {
+    color: var(--title-color);
+    text-align: center;
+}
+
+.table-responsive {
+    margin-top: 20px;
+}
+
+#users-table {
+    background-color: var(--bg-color);
+    border-collapse: collapse;
+}
+
+#users-table th {
+    background-color: var(--title-color);
+    color: var(--text-color);
+}
+
+#users-table td {
+    color: var(--title-color);
+}
+
+#users-table tr:hover {
+    background-color: var(--icons-color);
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    color: var(--text-color) !important;
+    background-color: transparent !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    background-color: var(--btn-color) !important;
+    border-color: var(--btn-color) !important;
+}
+
+.make-admin-btn {
+    background-color: var(--btn-color) !important;
+    border: none;
+}
+.make-admin-span {
+    text-decoration: underline !important;
+}
+
+/* edit form css */
+
+.form-group label {
+    color: var(--icons-color);
+}
+
+.edituser-container {
+    /* width: 400px; */
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* les buttons edit-delete */
+#edit-user-btn,
+#delete-user-btn {
+    text-transform: underline;
+    background-color: transparent;
+    border: none;
+    color: var(--title-color);
+}
+.actions-user-btns {
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    /* text-decoration: underline; */
+}
+/* search part */

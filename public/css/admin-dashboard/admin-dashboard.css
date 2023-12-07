@@ -1,0 +1,152 @@
+:root {
+    --bg-color: #f4a460;
+    --text-color: #ffdead;
+    --icons-color: #daa520;
+    --btn-color: #e9967a;
+    --title-color: #8b4513;
+}
+
+.wrapper {
+    display: flex;
+}
+
+.admin-content {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: var(--text-color);
+}
+
+.admin-dashboard-sidebar {
+    background-color: var(--text-color);
+    height: 100vh;
+    width: 230px;
+}
+
+.main-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    min-height: 100%;
+    width: 230px;
+    z-index: 810;
+    background: var(--title-color);
+    padding-top: 50px;
+}
+
+.user-panel {
+    /* background: var(--icons-color);  */
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.user-panel img {
+    width: 45px;
+    height: 45px;
+}
+
+.user-panel .info {
+    padding-left: 55px;
+    color: var(--icons-color);
+}
+
+.sidebar-menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.sidebar-form {
+    margin-bottom: 15px;
+}
+
+.sidebar-menu .header {
+    padding: 10px 5px;
+    font-size: 18px;
+    color: var(--icons-color);
+    /* background: var(--btn-color);  */
+    text-align: center;
+    font-weight: 900;
+}
+
+.sidebar-menu li a {
+    padding: 12px 5px 12px 15px;
+    display: block;
+    color: var(--text-color);
+    font-size: 14px;
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 1.2em;
+}
+
+.sidebar-menu li a:hover {
+    text-decoration: none;
+    background: var(--title-color);
+    color: var(--text-color);
+}
+
+.sidebar-menu li a .fa {
+    width: 20px;
+    color: var(--icons-color);
+}
+/*admin-homepage dashboard-cards css */
+.dashboard-cards-container {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+.adminpage-cards:hover {
+    transform: scale(1.1);
+}
+.adminpage-cards {
+    box-shadow: 10px 10px 10px var(--bg-color);
+    background-position: center;
+    background-size: cover;
+    height: 200px;
+    padding: 10px;
+    border-radius: 10px;
+}
+.card-users {
+    background: url(/images/admin/users2.jpg);
+}
+.card-review {
+    background: url(/images/admin/review.jpg);
+}
+.card-recipe {
+    background: url(/images/admin/recipes.jpg);
+}
+.card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-color);
+}
+.btn {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--bg-color);
+    color: var(--title-color);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: var(--title-color);
+    color: var(--text-color);
+}
+
+@media (max-width: 767px) {
+    .main-sidebar {
+        position: fixed;
+        top: 0;
+        left: -230px;
+        transition: left 0.3s;
+    }
+
+    .main-sidebar.active {
+        left: 0;
+    }
+}

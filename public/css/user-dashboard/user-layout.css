@@ -1,0 +1,99 @@
+/* notifications-mail */
+i.fa-solid {
+    margin-top: 12px;
+    font-size: 1.6em;
+    margin-right: 18px;
+    color: var(--title-color);
+}
+/* user-dashboard Header Styles */
+.header {
+    background-color: var(--icons-color);
+    padding: 10px 0;
+}
+
+.container-fluid {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.logo_section,
+.header_information {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 150px;
+    margin-left: 50px;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.navbar-nav {
+    list-style: none;
+    display: flex;
+    margin-left: auto;
+}
+
+.nav-item {
+    padding: 0 15px;
+}
+
+.nav-link {
+    color: var(--title-color);
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.nav-link:hover {
+    opacity: 0.8;
+}
+
+.sign_btn {
+    margin-left: auto;
+}
+
+.sign_btn a {
+    display: inline-block;
+    background-color: var(--text-color);
+    color: var(--title-color);
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.sign_btn a:hover {
+    background-color: var(--title-color);
+    color: var(--text-color);
+    text-decoration: none;
+}
+/* userpage css */
+
+.user-dashboard-container {
+    /* height: 100vh; */
+    /* background: url('/images/bg/bg4.jpg') no-repeat center center; */
+    background-size: cover;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* .user-dashboard-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(235, 235, 235, 0.4);
+    z-index: 2;
+} */
