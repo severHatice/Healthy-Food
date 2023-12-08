@@ -1,9 +1,9 @@
-<div {{$attributes->merge(['class' => 'bg-gray-50 border border-gray-200 rounded p-6'])}}>
+{{-- <div {{$attributes->merge(['class' => 'bg-gray-50 border border-gray-200 rounded p-6'])}}>
     {{$slot}}
-    {{-- The $slot variable is the placeholder for all content to be inserted --}}
-</div>
+    The $slot variable is the placeholder for all content to be inserted
+</div> --}}
 
-<section id="card_recipe" class="card_recipe">
+<section id="card_recipe" class="card_recipe" >
     <div class="container">
         <div class="row">
             <div class="card_recipe_content text-center  wow fadeIn" data-wow-duration="5s">
@@ -12,7 +12,11 @@
                         <h4>Delightful</h4>
                         <h3>Experience</h3>
                     </div>
+
+                    <div class="main_card_recipe_content">                     
                     {{$slot}}
+                    </div>
+                    
                 </div>
             </div>
         </div>

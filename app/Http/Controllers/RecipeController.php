@@ -19,7 +19,7 @@ class RecipeController extends Controller
     {
         $formFields = $request->validate([
             'title' => 'required|max:255',
-            'image' => 'image|mimes:png,jpg,jpeg|max:2048',
+            'image' => 'required|image|mimes:png,jpg,jpeg',
             'description' => 'required|string',
             'total_calories' => 'required|numeric',
             'total_time' => 'required',
@@ -47,7 +47,7 @@ class RecipeController extends Controller
         $recipe->description = $ingredientsDescription;
         $recipe->save();
 
-        return redirect('/')->with('message', 'Recipe created Successfully!');
+        return redirect('/user/dashboard')->with('message', 'Recipe created Successfully!');
     }
 
     public function index()
@@ -91,10 +91,14 @@ class RecipeController extends Controller
     }
 
     public function userdashboard()
-    {
-        $recipes = Recipe::all();
+    {  
+        $recipes=Recipe::paginate(4);
         // dd($recipes);
-        return view('users.user-dashboard.userpage', compact('recipes'));
+        return view('users.user-dashboard.userpage',compact('recipes'));
+    }
+    public function showRecipesCards(){
+        $recipes=Recipe::all();
+        return view('recipes.recipes',compact('recipes'));
     }
 
    

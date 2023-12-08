@@ -7,4 +7,5 @@
             @include('recipes.recipes')
         </section>
     </div>
+
 @endsection
