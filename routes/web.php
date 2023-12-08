@@ -1,13 +1,14 @@
 <?php
 
 
-use App\Http\Controllers\ApiController;
-
-use App\Http\Controllers\RecipeController;
-
-use App\Http\Controllers\UserController;
 use Database\Factories\RecipeFactory;
+
 use Illuminate\Support\Facades\Route;
+
+use App\Http\Controllers\ApiController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\RecipeController;
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -79,3 +80,10 @@ Route::put('/recipes/{recipe}', [RecipeController::class, 'update'])->name('reci
 Route::delete('/recipes/{recipe}', [RecipeController::class, 'destroy'])->name('recipes.destroy');
 
 Route::get('/users/recipes',[RecipeController::class, 'showRecipesCards'])->name('recipes');
+
+
+// show message form
+Route::get('/contact', [ContactController::class, 'showContactForm'])->name('showContactForm');
+
+// end message
+Route::post('/contact', [ContactController::class, 'submitContactForm'])->name('contact');
