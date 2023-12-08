@@ -9,16 +9,29 @@
     {{-- Bootstrap Link --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
     {{-- fontawesome --}}
     <script src="https://kit.fontawesome.com/7fe229702a.js" crossorigin="anonymous"></script>
+
+    <!-- SweetAlert2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10">
     {{-- custon css --}}
     <link rel="stylesheet" href="{{ asset('css/user-dashboard/user-layout.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     {{-- custom card-recipe css --}}
-    <link rel="stylesheet" href="{{ asset('css/card-recipe.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/recipes/card-recipe.css') }}">
     <!--Theme custom css createRecipe-->
-    <link rel="stylesheet" href="{{ asset('css/create-recipe.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/recipes/create-recipe.css') }}">
+    {{-- custom card-container css --}}
+    <link rel="stylesheet" href="{{ asset('css/recipes/card-container.css') }}">
+    {{-- tailwind library --}}
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
 
+    {{-- swiper css link --}}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    {{-- custom swiper css --}}
+    <link rel="stylesheet" href="{{ asset('css/swiper.css') }}">
 
 </head>
 
@@ -45,9 +58,15 @@
                                     aria-expanded="false" aria-label="Toggle navigation">
                                     <span class="navbar-toggler-icon"></span>
                                 </button>
-                                <div class="collapse navbar-collapse" id="navbarsExample04">
+                                <div class=" navbar-collapse" id="navbarsExample04">
+                                    {{-- collapse is deleted in up --}}
                                     <ul class="navbar-nav mr-auto">
-
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Hello {{ Auth::user()->username }}</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/">Home</a>
+                                        </li>
                                         <li class="notifications-mail">
                                             <a href="#" class="site-cart">
                                                 <i class="fa-solid fa-envelope"></i>
@@ -60,9 +79,7 @@
                                         <li class="nav-item">
                                             <a class="nav-link" href="#recipes">Recipes</a>
                                         </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">{{ Auth::user()->username }}</a>
-                                        </li>
+                                      
                                     </ul>
                                     <div class="sign_btn"><a href="{{ route('createRecipeForm') }}">Create Recipes</a>
                                     </div>
@@ -76,6 +93,31 @@
     </header>
 
     @yield('content')
+
+    <!-- SweetAlert2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    {{-- swiper js --}}
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    {{-- swiper js code  --}}
+    <script>
+        const swiper = new Swiper('.swiper', {
+            slidesPerView: 3,
+            centeredSlides: true,
+            spaceBetween: 30,
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+                type: 'bullets',
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
+
 
 </body>
 
