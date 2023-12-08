@@ -9,11 +9,8 @@
           <div class="col-md-6 offset-md-3">
              <form id="request" class="main_form">
                 <div class="row">
-                   <div class="col-md-12 ">
-                      <input class="contactus" placeholder="Full Name" type="type" name="Full Name"> 
-                   </div>
                    <div class="col-md-12">
-                      <input class="contactus" placeholder="Phone Number" type="type" name="Phone Number"> 
+                      <input class="contactus" placeholder="Full Name" type="type" name="Full Name"> 
                    </div>
                    <div class="col-md-12">
                       <input class="contactus" placeholder="Email" type="type" name="Email">                          
