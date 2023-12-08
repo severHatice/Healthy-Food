@@ -14,11 +14,12 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Poppins:ital,wght@0,200;0,300;0,400;1,200&family=Roboto:ital,wght@0,400;1,300&display=swap"
         rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 
     {{-- font-family: 'Montserrat', sans-serif;
          font-family: 'Poppins', sans-serif;
-         font-family: 'Roboto', sans-serif; 
-     --}}
+         font-family: 'Roboto', sans-serif; --}}
+   
 
     {{-- icons-fontawesome --}}
     {{-- my kit --}}
@@ -49,6 +50,9 @@
     <link rel="stylesheet" href="{{ asset('css/responsive.css') }}" />
     {{-- custom card-recipe css --}}
     <link rel="stylesheet" href="{{ asset('css/card-recipe.css') }}">
+
+    {{--footer link--}}
+    <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
 </head>
 
 <body>
@@ -108,7 +112,7 @@
     </main>
 
     <footer>
-        
+        @extends('partials/footer');
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
