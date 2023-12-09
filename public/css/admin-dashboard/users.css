@@ -2,6 +2,7 @@
 .user-management-title {
     color: var(--title-color);
     text-align: center;
+    font-size: 1.6em;
 }
 
 .table-responsive {

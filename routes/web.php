@@ -25,6 +25,7 @@ use App\Http\Controllers\SubscribesController;
 Route::get('/', function () {
     return view('homepage');
 });
+// *******************************AUTH********************************8
 Route::get('/register', [UserController::class, 'registerForm'])->name('registerForm');
 
 Route::post('/register', [UserController::class, 'register'])->name('register');
@@ -38,6 +39,7 @@ Route::post('/logout', [UserController::class, 'logout']);
 Route::get('/admin/dashboard', function () {
     return view('admin.adminpage');
 });
+// *****************************************USER***************************************
 
 // get all users as admin
 Route::get('/users', [UserController::class, 'index'])->name('users');
@@ -52,11 +54,16 @@ Route::put('/user/{user}/edit',[UserController::class,'editUser'])->name('edit')
 // delete user
 Route::delete('user/{id}/delete',[UserController::class,'deleteUserForm'])->name('delete');
 
-Route::get('/user/dashboard',[RecipeController::class,'userdashboard']);
+// here, at the same time we send all recipes to this page
+Route::get('/user/dashboard',[RecipeController::class,'userdashboard'])->name('userdashboard');
+
+// *************************ABOUT PAGE***********************************
 
 Route::get('/about',function(){
     return view('homepage');
 });
+
+// ****************************RECIPES PART******************************
 
 Route::get('/create-recipe', [RecipeController::class, 'createRecipeForm'])->name('createRecipeForm');
 
@@ -69,29 +76,35 @@ Route::get('/contact',function(){
     return view('homepage');
 });
 
-Route::get('/recipes',[ApiController::class,'getSpoonacularRecipes']);
-
-// routes/web.php
-
-// Route::get('/recipes', [RecipeController::class, 'index'])->name('recipes.index');
-Route::get('/recipes/create', [RecipeController::class, 'create'])->name('recipes.create');
-// Route::post('/recipes', [RecipeController::class, 'store'])->name('recipes.store');
-Route::get('/recipes/{recipe}/edit', [RecipeController::class, 'edit'])->name('recipes.edit');
-Route::put('/recipes/{recipe}', [RecipeController::class, 'update'])->name('recipes.update');
-Route::delete('/recipes/{recipe}', [RecipeController::class, 'destroy'])->name('recipes.destroy');
-
-Route::get('/users/recipes',[RecipeController::class, 'showRecipesCards'])->name('recipes');
-
-
 // show message form
 Route::get('/contact', [ContactController::class, 'showContactForm'])->name('showContactForm');
 
 // end message
 Route::post('/contact', [ContactController::class, 'submitContactForm'])->name('contact');
 
+// see detail of recipe
+Route::get('/recipes/{recipe}', [RecipeController::class, 'showRecipe'])->name('recipe-detail.show');
+// update recipe
+// Route::get('/recipes/{recipe}/edit', [RecipeController::class, 'editRecipe'])->name('recipe-card.edit');
+// delete recipe
+// Route::delete('/recipes/{recipe}', [RecipeController::class, 'deleteRecipe'])->name('recipe.destroy');
+
+//******************* */ likes for recettes *************************************8
+Route::post('/recipes/{recipe}/like', [RecipeController::class, 'like'])->name('recipes.like');
+Route::post('/recipes/{recipe}/unlike', [RecipeController::class, 'unlike'])->name('recipes.unlike');
+// *************************8rating part********************************************
+Route::post('/recipes/{recipe}/rate', [RecipeController::class, 'rate'])->name('recipes.rate');
+// recipe edit part
+Route::get('/recipes/{recipe}/edit', [RecipeController::class, 'editRecipe'])->name('recipe.edit');
+Route::put('/recipes/{recipe}', [RecipeController::class, 'updateRecipe'])->name('recipe.update');
+// recipe delete part
+Route::delete('/recipes/{recipe}', [RecipeController::class, 'deleteRecipe'])->name('recipe.delete');
 
 //show subscribes form
 Route::get('/footer', [SubscribesController::class, 'showSubscribes'])->name('showSubscribes');
 
 //Subscribe
 Route::post('/footer', [SubscribesController::class, 'subscribes'])->name('footer');
+
+
+
