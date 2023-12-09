@@ -8,6 +8,6 @@
         {{-- todo: we have to show to hour and minute 02:22:00 --}}
         <p class="card_recipe_text">{{ $recipe->total_time }} minutes</p>
         <p class="card_recipe_text">{{ $recipe->category }}</p>
-        <button class="btn">Click here</button>
+        <button class="btn" onclick="window.location='{{ route('recipe-detail.show', $recipe) }}'">Click here</button>
     </div>
 </div>
