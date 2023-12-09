@@ -7,7 +7,7 @@
                         <i class="fas fa-map-marker-alt"></i>
                         <div class="cta-text">
                             <h4>Find us</h4>
-                            <span>1010 Avenue, sw 54321, chandigarh</span>
+                            <span>85 Rue dela rivier, 5684, luxembourg</span>
                         </div>
                     </div>
                 </div>
@@ -16,7 +16,7 @@
                         <i class="fas fa-phone"></i>
                         <div class="cta-text">
                             <h4>Call us</h4>
-                            <span>9876543210 0</span>
+                            <span>352 661 594 658</span>
                         </div>
                     </div>
                 </div>
@@ -25,7 +25,7 @@
                         <i class="far fa-envelope-open"></i>
                         <div class="cta-text">
                             <h4>Mail us</h4>
-                            <span>mail@info.com</span>
+                            <span>questions.healthyfood@gmail.com</span>
                         </div>
                     </div>
                 </div>
@@ -54,9 +54,9 @@
                             <li><a href="/">Home</a></li>
                             <li><a href="#about">about</a></li>
                             <li><a href="#">services</a></li>
-                            <li><a href="#contact">Contact</a></li>
+                            <li><a href="#">Contact</a></li>
                             <li><a href="#">Our Services</a></li>
-                            <li><a href="#">Contact us</a></li>
+                            <li><a href="#contact">Contact us</a></li>
                         </ul>
                     </div>
                 </div>
@@ -69,10 +69,12 @@
                             <p>Don’t miss to subscribe to our new feeds, kindly fill the form below.</p>
                         </div>
                         <div class="subscribe-form">
-                            <form action="#">
-                                <input type="text" placeholder="Email Address">
-                                <button><i class="fab fa-telegram-plane"></i></button>
+                            <form action="/footer"  method="POST">
+                                @csrf
+                                <input type="email" placeholder="Email Address" name="email" required>
+                                <button type="submit" ><i class="fab fa-telegram-plane"></i></button>
                             </form>
+                            <div class="confirmation-message" style="display: none;">Merci de vous être abonné !</div>
                         </div>
                     </div>
                 </div>

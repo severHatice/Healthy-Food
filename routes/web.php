@@ -9,6 +9,7 @@ use App\Http\Controllers\ApiController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RecipeController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\SubscribesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -98,6 +99,12 @@ Route::get('/recipes/{recipe}/edit', [RecipeController::class, 'editRecipe'])->n
 Route::put('/recipes/{recipe}', [RecipeController::class, 'updateRecipe'])->name('recipe.update');
 // recipe delete part
 Route::delete('/recipes/{recipe}', [RecipeController::class, 'deleteRecipe'])->name('recipe.delete');
+
+//show subscribes form
+Route::get('/footer', [SubscribesController::class, 'showSubscribes'])->name('showSubscribes');
+
+//Subscribe
+Route::post('/footer', [SubscribesController::class, 'subscribes'])->name('footer');
 
 
 
