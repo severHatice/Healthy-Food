@@ -9,6 +9,7 @@ use App\Http\Controllers\ApiController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RecipeController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\SubscribesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -87,3 +88,10 @@ Route::get('/contact', [ContactController::class, 'showContactForm'])->name('sho
 
 // end message
 Route::post('/contact', [ContactController::class, 'submitContactForm'])->name('contact');
+
+
+//show subscribes form
+Route::get('/footer', [SubscribesController::class, 'showSubscribes'])->name('showSubscribes');
+
+//Subscribe
+Route::post('/footer', [SubscribesController::class, 'subscribes'])->name('footer');
