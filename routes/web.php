@@ -1,9 +1,10 @@
 <?php
 
 
+use App\Models\Recipe;
+
 use Database\Factories\RecipeFactory;
 use Illuminate\Support\Facades\Route;
-
 use App\Http\Controllers\ApiController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CaloryController;
@@ -104,6 +105,16 @@ Route::delete('/recipes/{recipe}', [RecipeController::class, 'deleteRecipe'])->n
 
 Route::get('/users/recipes',[RecipeController::class, 'showRecipesCards'])->name('recipes');
 
+//Subscribe
+Route::post('/footer', [SubscribesController::class, 'subscribes'])->name('footer');
+
+Route::get('/', function () {
+    $recipes = Recipe::paginate(3); 
+    return view('homepage', compact('recipes')); 
+});
+
 // calory controller https requests and forms
 Route::post('/calorieTracker', [CaloryController::class, 'addFoodItem']);
 Route::get('/calorieTracker', [CaloryController::class, 'getDailyCalories']);
+
+
