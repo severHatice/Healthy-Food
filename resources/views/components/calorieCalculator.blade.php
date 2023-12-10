@@ -26,7 +26,7 @@
 #submitCalories
 {
     position:absolute;
-    top:325px;
+    top:295px;
 }
 
 #calorieTrackerContainer h2

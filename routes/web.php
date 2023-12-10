@@ -103,3 +103,7 @@ Route::put('/recipes/{recipe}', [RecipeController::class, 'updateRecipe'])->name
 Route::delete('/recipes/{recipe}', [RecipeController::class, 'deleteRecipe'])->name('recipe.delete');
 
 Route::get('/users/recipes',[RecipeController::class, 'showRecipesCards'])->name('recipes');
+
+// calory controller https requests and forms
+Route::post('/calorieTracker', [CaloryController::class, 'addFoodItem']);
+Route::get('/calorieTracker', [CaloryController::class, 'getDailyCalories']);
