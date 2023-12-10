@@ -1,10 +1,11 @@
 <?php
 
 
+use App\Models\Recipe;
+
 use Database\Factories\RecipeFactory;
 
 use Illuminate\Support\Facades\Route;
-
 use App\Http\Controllers\ApiController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RecipeController;
@@ -106,5 +107,9 @@ Route::get('/footer', [SubscribesController::class, 'showSubscribes'])->name('sh
 //Subscribe
 Route::post('/footer', [SubscribesController::class, 'subscribes'])->name('footer');
 
+Route::get('/', function () {
+    $recipes = Recipe::paginate(3); 
+    return view('homepage', compact('recipes')); 
+});
 
 
