@@ -112,11 +112,13 @@ ul {list-style-type: none;}
 .month .prev {
   float: left;
   padding-top: 0px;
+  display:none;
 }
 
 .month .next {
   float: right;
   padding-top: 0px;
+  display:none;
 }
 
 .weekdays {
@@ -205,7 +207,7 @@ ul {list-style-type: none;}
                                     </div>
                                     <div>
                                         <label for="date"style="color:white;font-size:10px;">
-                                            Date:
+                                        Date (Format MM/YY/DD [Please only enter 12/23/your_day_here for now]):
                                         </label>
                                         <input type="text" name="date" value="{{old('date')}}">
                                             @error('date')
@@ -215,7 +217,7 @@ ul {list-style-type: none;}
 
                                     <div>
                                         <label for="time"style="color:white;font-size:10px;">
-                                            Time:
+                                            Time: (HH:MM example: 17:45)
                                         </label>
                                         <input type="text" name="time" value="{{old('time')}}">
                                             @error('time')
@@ -285,22 +287,22 @@ ul {list-style-type: none;}
             <li><span class="dateEntry">13</span></li>
             <li><span class="dateEntry">14</span></li>
             <li><span class="dateEntry">15</span></li>
-            <li>16</li>
-            <li>17</li>
-            <li>18</li>
-            <li>19</li>
-            <li>20</li>
-            <li>21</li>
-            <li>22</li>
-            <li>23</li>
-            <li>24</li>
-            <li>25</li>
-            <li>26</li>
-            <li>27</li>
-            <li>28</li>
-            <li>29</li>
-            <li>30</li>
-            <li>31</li>
+            <li><span class="dateEntry">16</span></li>
+            <li><span class="dateEntry">17</span></li>
+            <li><span class="dateEntry">18</span></li>
+            <li><span class="dateEntry">19</span></li>
+            <li><span class="dateEntry">20</span></li>
+            <li><span class="dateEntry">21</span></li>
+            <li><span class="dateEntry">22</span></li>
+            <li><span class="dateEntry">23</span></li>
+            <li><span class="dateEntry">24</span></li>
+            <li><span class="dateEntry">25</span></li>
+            <li><span class="dateEntry">26</span></li>
+            <li><span class="dateEntry">27</span></li>
+            <li><span class="dateEntry">28</span></li>
+            <li><span class="dateEntry">29</span></li>
+            <li><span class="dateEntry">30</span></li>
+            <li><span class="dateEntry">31</span></li>
         </ul>
         @endAuth
 </div>
@@ -437,6 +439,7 @@ let dateEntries = document.querySelectorAll(".dateEntry");
 for(i=0;i<dateEntries.length;i++){
     //console.log(dateEntries);
     let entry = dateEntries[i];
+    //console.log(entry)
     dateEntries[i].addEventListener("click",(e)=>{
         e.preventDefault();
         let text = entry.innerText
@@ -444,7 +447,7 @@ for(i=0;i<dateEntries.length;i++){
         {
             text = "0" + text;
         }
-        let loopDay="12/12/" + text;
+        let loopDay="12/23/" + text;
         let caloryData = loadCalories();
         //create table and calls create table function
         let currentTable = document.querySelector("#currentTable");
