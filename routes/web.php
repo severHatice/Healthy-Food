@@ -1,13 +1,14 @@
 <?php
 
 
-use App\Http\Controllers\ApiController;
-
-use App\Http\Controllers\RecipeController;
-
-use App\Http\Controllers\UserController;
 use Database\Factories\RecipeFactory;
+
 use Illuminate\Support\Facades\Route;
+
+use App\Http\Controllers\ApiController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\CaloryController;
+use App\Http\Controllers\RecipeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -79,3 +80,7 @@ Route::put('/recipes/{recipe}', [RecipeController::class, 'update'])->name('reci
 Route::delete('/recipes/{recipe}', [RecipeController::class, 'destroy'])->name('recipes.destroy');
 
 Route::get('/users/recipes',[RecipeController::class, 'showRecipesCards'])->name('recipes');
+
+Route::post('/calorieTracker', [CaloryController::class, 'addFoodItem']);
+
+Route::get('/calorieTracker', [CaloryController::class, 'getDailyCalories']);

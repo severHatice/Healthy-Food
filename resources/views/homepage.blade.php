@@ -10,6 +10,10 @@
    @include('contact')
 </section>
 
+<section id="caloriesTracker">
+    <a name="caloriesTracker"></a>
+    @include('components.calorieCalculator')
+</section>
 
 <section id="about">
     <a name="about"></a>
