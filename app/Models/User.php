@@ -51,4 +51,10 @@ public function recettes()
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+        //needed to return user id to calorycontroller
+    public function calories()
+        { 
+            return $this->hasMany(Calory::class);
+        }
 }
