@@ -1,0 +1,143 @@
+.recipe-content {
+    background-color: var(--text-color);
+    color: var(--text-color);
+    font-family: "Poppins", sans-serif;
+    padding: 50px;
+}
+
+.recipe-detail-container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 50px;
+    background-color: var(--text-color);
+    border-radius: 10px;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); */
+}
+
+.recipe-title {
+    color: var(--title-color);
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    text-transform: uppercase;
+}
+
+.recipe-single-img {
+    position: relative;
+}
+
+.recipe-single-img img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.recipe-calorie,
+.short-info {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: rgba(87, 66, 5, 0.8);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+
+.short-info {
+    left: auto;
+    right: 10px;
+    /* background-color: var(--bg-color); */
+}
+
+.icon-alarm-clock:before {
+    /* content: "\f017";  */
+    color: var(--title-color);
+    margin-right: 5px;
+}
+
+.recipe-materials-div,
+.recipe-preparation {
+    margin-top: 20px;
+}
+
+.recipe-content-titles {
+    color: var(--title-color);
+    margin-bottom: 10px;
+    font-size: 1.4em;
+    text-align: center;
+}
+#recipe-inner-body {
+    margin: 0 auto;
+}
+
+.recipe-materials {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin: 0;
+}
+
+.recipe-materials li {
+    margin-bottom: 5px;
+    color: var(--title-color);
+}
+
+.recipe-description {
+    margin-top: 20px;
+    line-height: 1.9;
+    color: var(--title-color);
+}
+/* like css */
+.like-icon i.fa-heart {
+    color: red;
+}
+
+.like-icon i.fa-heart.fa {
+    color: white;
+}
+.likes-count {
+    color: var(--title-color);
+    font-size: 1.1em;
+}
+/* rating css */
+
+.star-rating {
+    font-size: 1.5em;
+    /* color: #fff;  */
+    display: inline-block;
+}
+
+.star-rating .checked {
+    color: var(--icons-color);
+}
+
+.star-rating .empty-stars {
+    color: var(--text-color);
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+        1px 1px 0 #000;
+}
+
+.star-rating span {
+    margin-left: 10px;
+    font-size: 0.7em;
+    color: var(--title-color);
+}
+.rating-like-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 98%;
+    margin-bottom: 10px;
+}
+/* buttons delete and edit*/
+.buttons-detail-recette{
+    display: flex;
+  margin-top: 10px;
+  padding: 10px;
+    gap: 10px;
+}
+.delete-btn{
+    border:none;
+    padding:0;
+}
+

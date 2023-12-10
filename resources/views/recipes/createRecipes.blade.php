@@ -4,7 +4,7 @@
     <form action="{{ route('createRecipes') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <h1>Create your Recipe</h1>
-        <div class="mb-3">
+        <div class="mb-3 col-12">
 
             <label for="title" class="form-label">Title</label>
             <input type="text" class="form-control" id="title" value="{{ old('title') }}" name="title"
@@ -30,13 +30,13 @@
             <input type="time" class="form-control" id="Total-time" value="{{ old('total_time') }}" name="total_time"
                 placeholder="Total Time">
         </div>
-        <div id="ingredients-container">
+        <div class="mb-3 col-12" id="ingredients-container">
             <div class = "mb-6 ingredient-input">
-                <label for="ingredients">Ingredients</label>
-                <input type="text" name="ingredients[][name]" placeholder="Ingredient Name">
+                <label for="ingredients">Ingredient Name</label>
+                <input class="mb-3 col-12 h-12" type="text" name="ingredients[][name]" >
             </div>
         </div>
-        <button type="button" onclick="addIngredient()" class="btn btn-primary">Add Ingredient</button>
+        <button type="button" onclick="addIngredient()" class="btn">Add Ingredient</button>
         <select class="form-select form-select-lg mb-3" aria-label="Large select example" name="category">
             <option selected>Category</option>
             <option value="Breakfast">Breakfast</option>
@@ -48,15 +48,15 @@
     </form>
     <script>
         function addIngredient() {
-            var container = document.getElementById('ingredients-container');
-            var newIngredientIndex = container.getElementsByClassName('ingredient-input').length;
+            let container = document.getElementById('ingredients-container');
+            let newIngredientIndex = container.getElementsByClassName('ingredient-input').length;
 
-            var newIngredient = document.createElement('div');
-            newIngredient.className = 'mb-3 ingredient-input';
+            let newIngredient = document.createElement('div');
+            newIngredient.className = 'mb-3 col-12 ingredient-input';
             newIngredient.innerHTML = `
-              <label for="ingredients[${newIngredientIndex}][name]">Ingredient Name</label>
-              <input type="text" name="ingredients[${newIngredientIndex}][name]" placeholder="Ingredient Name">
-          `;
+                <label for="ingredients[${newIngredientIndex}][name]">Ingredient Name</label>
+                <input type="text" name="ingredients[${newIngredientIndex}][name]" class="form-control">
+            `;
 
             container.appendChild(newIngredient);
         }
