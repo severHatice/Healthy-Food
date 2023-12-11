@@ -3,7 +3,7 @@
 @section('content')
     @include('components.slider')
 
-
+    @include('components.calorieCalculator')
 
     {{-- <section id="recipes"> --}}
         {{-- class="db-recipes" --}}
@@ -17,10 +17,8 @@
    @include('homepage.contact')
 </section> --}}
 
-    {{-- <section id="caloriesTracker">
-    <a name="caloriesTracker"></a>
-    @include('components.calorieCalculator')
-</section> --}}
+
+
 
     <section id="about">
         <a name="about"></a>

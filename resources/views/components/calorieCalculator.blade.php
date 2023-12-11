@@ -27,6 +27,7 @@
 {
     position:absolute;
     top:295px;
+    background-color:darkgoldenrod;
 }
 
 #calorieTrackerContainer h2
@@ -60,7 +61,7 @@
 }
 #calorieDiv
 {
-    height:711px;
+    height:681px;
     position:relative;
     left:-0px;
     
