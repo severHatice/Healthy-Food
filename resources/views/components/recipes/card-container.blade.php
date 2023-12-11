@@ -1,7 +1,4 @@
-{{-- <div {{$attributes->merge(['class' => 'bg-gray-50 border border-gray-200 rounded p-6'])}}>
-    {{$slot}}
-    The $slot variable is the placeholder for all content to be inserted
-</div> --}}
+
 
 <section id="card_recipe" class="card_recipe" >
     <div class="container">

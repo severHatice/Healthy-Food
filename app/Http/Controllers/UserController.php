@@ -43,7 +43,7 @@ class UserController extends Controller
             'admin' => false
         ]);
 
-        return redirect('/')->with('success', 'User successfully registered.');
+        return redirect('/login')->with('success', 'User successfully registered.');
     }
     //  calculate daily calorie target
     private function calculateDailyCalorieTarget($gender, $age, $weight, $height)
@@ -86,11 +86,15 @@ class UserController extends Controller
     }
 
     // admin part get all users to manage
-    public function index()
-    {
-        $users = User::paginate(1);
-        return view('admin.users', compact('users'));
-    }
+ // UserController.php
+
+public function index(Request $request)
+{
+    $searchTerm = $request->input('searchform');
+    $users = User::search($searchTerm)->paginate(3);
+    return view('admin.users', compact('users'));
+}
+
     // make admin the user //admin part
     public function updateAdminStatus(Request $request, $id)
     {
@@ -121,7 +125,7 @@ class UserController extends Controller
         return back()->with('success', 'User updated successfully');
     }
     // delete user as admin
-    public function destroy($id)
+    public function deleteUserForm($id)
 {
     $user = User::find($id);
     $user->delete();

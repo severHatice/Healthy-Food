@@ -16,7 +16,16 @@ class Recipe extends Model
 {
     return $this->belongsTo(User::class);
 }
-
+// relation with ratings one to many
+public function ratings()
+{
+    return $this->hasMany(Rating::class);
+}
+// calculate average rating for recipe
+public function averageRating()
+{
+    return $this->ratings()->avg('rating') ?: 0;
+}
 
 
     /**
@@ -34,9 +43,21 @@ class Recipe extends Model
         'category',
         'is_liked',
     ];
+
+    public function scopeSearch($query, $searchTerm)
+    {
+        if ($searchTerm) {
+            $query->where(function($query) use ($searchTerm) {
+                $query->where('title', 'like', '%' . $searchTerm . '%')
+                      ->orWhere('description', 'like', '%' . $searchTerm . '%');
+            });
+        }
+    }
+    
+    
     public function scopeFilter($query, array $filters)
     {
-        // تعديل هذا الجزء حسب احتياجاتك
+
         if ($filters['tag'] ?? false) {
             $query->where('tags', 'like', '%' . $filters['tag'] . '%');
         }
@@ -51,6 +72,28 @@ class Recipe extends Model
             }
         }
     }
+    // to change the format of recipe total_time(for ex:02:22:00) to "2 hours 22 min" format
+    public function getTotalTimeAttribute($value)
+    {
+        // Split the time into hours, minutes, and seconds
+        list($hours, $minutes, $seconds) = explode(':', $value);
+
+        $formattedTime = '';
+        if ($hours > 0) {
+            $formattedTime .= $hours . ' hours ';
+        }
+        if ($minutes > 0) {
+            $formattedTime .= $minutes ;
+        }
+
+        return trim($formattedTime);
+    }
+    // to manage like or likes according to count of likes(0,1 like or 2,3,4 likes)
+    public function likesCount()
+{
+    return $this->is_liked;
+}
+
 
     /**
      * The attributes that should be hidden for serialization.

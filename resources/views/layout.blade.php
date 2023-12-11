@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Healty Foods</title>
+
     {{-- Bootstrap Link --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -19,7 +20,7 @@
     {{-- font-family: 'Montserrat', sans-serif;
          font-family: 'Poppins', sans-serif;
          font-family: 'Roboto', sans-serif; --}}
-   
+
 
     {{-- icons-fontawesome --}}
     {{-- my kit --}}
@@ -51,8 +52,22 @@
     {{-- custom card-recipe css --}}
     <link rel="stylesheet" href="{{ asset('css/card-recipe.css') }}">
 
-    {{--footer link--}}
+    {{-- footer link --}}
     <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
+
+    {{-- db-recipes --}}
+    <link rel="stylesheet" href="{{ asset('css/homepage/db-recipes.css') }}">
+    {{-- custom card-recipe css --}}
+    <link rel="stylesheet" href="{{ asset('css/recipes/card-recipe.css') }}">
+
+    {{-- custom card-container css --}}
+    <link rel="stylesheet" href="{{ asset('css/recipes/card-container.css') }}">
+    <link rel="stylesheet" href="{{asset('css/recipes/recipe-detail.css')}}">
+
+        {{-- tailwind library --}}
+        <script src="https://cdn.tailwindcss.com"></script>
+        {{-- <script src="//unpkg.com/alpinejs" defer></script> --}}
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 
 <body>
@@ -68,7 +83,7 @@
                                 <ul class="nav navbar-nav navbar-right">
 
                                     <li><a href="/">Home</a></li>
-                                    <li><a href="#recipe">Recipes</a></li>
+                                    <li><a href="#recipes">Recipes</a></li>
                                     <li><a href="#about">About</a></li>
                                     <li><a href="#calorieTracker">Calories</a></li>
                                     <li><a href="#contact">Contact</a></li>
@@ -84,15 +99,14 @@
                                                 <span class="count">2</span>
                                             </a>
                                         </li>
-                                        
+
                                         <form method="POST" action="/logout">
                                             @csrf
 
-                                            <button  class="logout">
+                                            <button class="logout">
                                                 <i class="fa-solid fa-right-from-bracket"></i>Logout
                                             </button>
                                         </form>
-                                 
                                     @else
                                         <li><a href="/login">Login</a></li>
                                         <li><a href="{{ Route('registerForm') }}">Register</a></li>

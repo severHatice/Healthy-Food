@@ -33,6 +33,19 @@ public function recipes()
         'daily_calorie_target'
     ];
 
+  // User.php (Model)
+
+public function scopeSearch($query, $term)
+{
+    if ($term) {
+        $query->where(function($subquery) use ($term) {
+            $subquery->where('username', 'like', "%{$term}%")
+                     ->orWhere('email', 'like', "%{$term}%");
+        });
+    }
+}
+
+
     /**
      * The attributes that should be hidden for serialization.
      *
@@ -52,4 +65,10 @@ public function recipes()
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+        //needed to return user id to calorycontroller
+    public function calories()
+        { 
+            return $this->hasMany(Calory::class);
+        }
 }
