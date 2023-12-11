@@ -2,10 +2,9 @@
 
 namespace Database\Seeders;
 
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-
-use AdminUserSeeder;
 use App\Models\User;
+use App\Models\Recipe;
+use App\Models\Comment;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -15,13 +14,30 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-         //\App\Models\User::factory(10)->create();
-      $this->call(AdminUserSeeder::class);
+        // Création d'un utilisateur spécifique
+        $specificUser = User::create([
+            'username' => 'healty food',
+            'email' => 'healty.food@gmail.com',
+            'password' => bcrypt('password'),
+            'admin' => 0,
+            'daily_calorie_target' => 2000,
+        ]);
 
-        //  $user = User::factory()->create([
-        //      'name' => 'healty food',
-        //     'email' => 'healty.food@gmail.com',
-        //     'password' =>bcrypt('password'),
-        //  ]);
+        // Génération de 10 utilisateurs aléatoires
+        $randomUsers = User::factory(10)->create();
+
+        // Création d'une collection avec l'utilisateur spécifique
+        $users = collect([$specificUser])->merge($randomUsers);
+
+        // Génération de 10 recettes associées à des utilisateurs aléatoires
+        $recipes = Recipe::factory(10)->create([
+            'user_id' => $users->random()->id,
+        ]);
+
+        // Génération de 10 commentaires associés à des utilisateurs et des recettes aléatoires
+        Comment::factory(10)->create([
+            'user_id' => $users->random()->id,
+            'recipe_id' => $recipes->random()->id,
+        ]);
     }
 }

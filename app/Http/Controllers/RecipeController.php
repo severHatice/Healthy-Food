@@ -101,5 +101,9 @@ class RecipeController extends Controller
         return view('recipes.recipes',compact('recipes'));
     }
 
-   
+    //show detaille card with comments 
+    public function showDetails($recipeId){
+        $recipe = Recipe::findOrFail($recipeId);
+        return view('comments.createComment', ['recipe' => $recipe]);
+    }
 }

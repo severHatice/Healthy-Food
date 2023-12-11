@@ -1,7 +1,7 @@
 {{-- <x-recipes.card-container>
     <div class="slick1">
-@foreach($recipes as $recipe)
-    <x-recipes.card-recipe :recipe="$recipe"></x-recipes.card-recipe>
+    @foreach($recipes as $recipe)
+        <x-recipes.card-recipe :recipe="$recipe"></x-recipes.card-recipe>
     @endforeach
 </div>
 </x-recipes.card-container> --}}
@@ -10,10 +10,11 @@
 <div class="swiper">
     <div class="swiper-wrapper">
         @foreach($recipes as $recipe)
-        <div class="swiper-slide">
+            <div class="swiper-slide">
                 <x-recipes.card-recipe :recipe="$recipe"></x-recipes.card-recipe>
             </div>
-        @endforeach
+        @endforeach 
+      
     </div>
 
     <div class="swiper-pagination"></div>
@@ -25,6 +26,6 @@
 
   
 
-{{-- <div class="users-pagination">
+<div class="users-pagination">
     {{ $recipes->links() }}
-</div> --}}
+</div> 

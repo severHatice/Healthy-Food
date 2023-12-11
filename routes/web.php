@@ -95,3 +95,9 @@ Route::get('/footer', [SubscribesController::class, 'showSubscribes'])->name('sh
 
 //Subscribe
 Route::post('/footer', [SubscribesController::class, 'subscribes'])->name('footer');
+
+//showdetaille recipe & comments
+Route::get('comments/createComment',[RecipeController::class, 'showDetails']);
+
+//
+//Route::post('/comments/store', [CommentController::class, 'store'])->name('comments.store');

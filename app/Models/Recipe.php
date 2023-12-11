@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Recipe extends Model
 {
@@ -70,6 +71,17 @@ class Recipe extends Model
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+
+    /*Relationship One-to-Many between
+     the Recipe model and the Comments model*/
+    public function comments(): HasMany
+    {
+        //last
+        return $this->hasMany(Comment::class)->latest();
+    }
+
+
 }
 
 

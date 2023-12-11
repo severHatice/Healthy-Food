@@ -17,7 +17,13 @@ class RecipeFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'title' => $this->faker->sentence(),
+            'total_calories' => random_int(200, 1000),
+            'total_time' => $this->faker->time(),
+            //'images' => $this->faker->image(),
+            'category' => 'Breakfast',
+            'description' => $this->faker->paragraphs(5, true)
+            
         ];
     }
 }
