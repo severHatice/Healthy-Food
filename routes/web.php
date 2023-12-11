@@ -3,6 +3,7 @@
 
 use App\Models\Recipe;
 
+use Illuminate\Http\Request;
 use Database\Factories\RecipeFactory;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApiController;
@@ -108,13 +109,11 @@ Route::get('/users/recipes',[RecipeController::class, 'showRecipesCards'])->name
 //Subscribe
 Route::post('/footer', [SubscribesController::class, 'subscribes'])->name('footer');
 
-Route::get('/', function () {
-    $recipes = Recipe::paginate(3); 
-    return view('homepage', compact('recipes')); 
-});
+Route::get('/', [RecipeController::class, 'homepage'])->name('homepage2');
+
 
 // calory controller https requests and forms
 Route::post('/calorieTracker', [CaloryController::class, 'addFoodItem']);
 Route::get('/calorieTracker', [CaloryController::class, 'getDailyCalories']);
-
-
+// get recipes from categories
+Route::get('/recipes/category/{category}', [RecipeController::class, 'getRecipesByCategory']);

@@ -8,6 +8,8 @@
         {{-- todo: we have to show to hour and minute 02:22:00 --}}
         <p class="card_recipe_text">{{ $recipe->total_time }} minutes</p>
         <p class="card_recipe_text">{{ $recipe->category }}</p>
-        <button class="btn" onclick="window.location='{{ route('recipe-detail.show', $recipe) }}'">Click here</button>
+        <p>{{ $recipe->is_liked }} likes</p>
+        <p>Average Rating: {{ round($recipe->averageRating(), 1) }}/5</p>
+        <a href="{{ route('recipe-detail.show', ['recipe' => $recipe->id, 'ref' => 'user-dashboard']) }}">Detay</a>
     </div>
 </div>

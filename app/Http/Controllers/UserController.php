@@ -86,11 +86,15 @@ class UserController extends Controller
     }
 
     // admin part get all users to manage
-    public function index()
-    {
-        $users = User::paginate(3);
-        return view('admin.users', compact('users'));
-    }
+ // UserController.php
+
+public function index(Request $request)
+{
+    $searchTerm = $request->input('searchform');
+    $users = User::search($searchTerm)->paginate(3);
+    return view('admin.users', compact('users'));
+}
+
     // make admin the user //admin part
     public function updateAdminStatus(Request $request, $id)
     {

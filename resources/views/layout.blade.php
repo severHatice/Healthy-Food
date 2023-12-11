@@ -5,9 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Healty Foods</title>
-    {{-- tailwind library --}}
-    {{-- <script src="https://cdn.tailwindcss.com"></script> --}}
-    <script src="//unpkg.com/alpinejs" defer></script>
+
     {{-- Bootstrap Link --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -64,6 +62,12 @@
 
     {{-- custom card-container css --}}
     <link rel="stylesheet" href="{{ asset('css/recipes/card-container.css') }}">
+    <link rel="stylesheet" href="{{asset('css/recipes/recipe-detail.css')}}">
+
+        {{-- tailwind library --}}
+        <script src="https://cdn.tailwindcss.com"></script>
+        {{-- <script src="//unpkg.com/alpinejs" defer></script> --}}
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 
 <body>

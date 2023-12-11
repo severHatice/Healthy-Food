@@ -20,7 +20,7 @@
 
         {{-- tailwind library --}}
         <script src="https://cdn.tailwindcss.com"></script>
-        <script src="//unpkg.com/alpinejs" defer></script>
+        {{-- <script src="//unpkg.com/alpinejs" defer></script> --}}
 </head>
 
 <body>
