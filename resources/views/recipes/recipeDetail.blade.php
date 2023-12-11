@@ -1,4 +1,6 @@
-@extends('users.user-dashboard.user-layout')
+{{-- @extends('users.user-dashboard.user-layout') --}}
+@extends($ref == 'user-dashboard' ? 'users.user-dashboard.user-layout' : 'layout')
+
 
 {{-- TODO: there is a problem in url we cannot pass from here to recipes page when clicked recipes on header --}}
 @section('content')

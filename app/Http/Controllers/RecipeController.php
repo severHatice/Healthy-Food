@@ -54,7 +54,8 @@ class RecipeController extends Controller
 
     public function userdashboard()
     {  
-        $recipes=Recipe::all();
+        $userId = Auth::id();
+        $recipes = Recipe::where('user_id', $userId)->get();
         // dd($recipes);
         return view('users.user-dashboard.userpage',compact('recipes'));
     }
@@ -64,13 +65,15 @@ class RecipeController extends Controller
     // }
 
     // Show a single recipe
-    public function showRecipe(Recipe $recipe)
+    public function showRecipe(Recipe $recipe,Request $request)
     {
+        $ref = $request->query('ref', 'default');//we added this one to oriante user to show recipe detail.if
+        // he is in homepage he will see detail there. if he is in his own page,it vill show detail in his page
         $descriptionParts = explode("\n\nIngredients:\n", $recipe->description);
         $mainDescription = $descriptionParts[0];
         $ingredientsList = isset($descriptionParts[1]) ? explode("\n", $descriptionParts[1]) : [];
     
-        return view('recipes.recipeDetail', compact('recipe', 'mainDescription', 'ingredientsList'));
+        return view('recipes.recipeDetail', compact('recipe', 'mainDescription', 'ingredientsList','ref'));
     }
 
 // set likes for recettes
@@ -119,6 +122,7 @@ public function rate(Request $request, Recipe $recipe)
             'user_id' => $userId,
             'rating' => $ratingValue,
         ]);
+        // TODO: it doesnt show messages.
         $message = 'Thank you for your rating!';
     }
 
@@ -183,6 +187,19 @@ public function deleteRecipe(Recipe $recipe)
 
 }
 
+public function homepage(Request $request) {
+    $searchTerm = $request->input('searchform');
+    $recipes = Recipe::search($searchTerm)
+                     ->paginate(3);
+    return view('homepage', compact('recipes')); 
+}
+// get recipes from categories
+public function getRecipesByCategory($category)
+{
+    $recipes = Recipe::where('category', $category)->paginate(2);
+    // ddd($recipes);//TODO:recipes come once as wished but buttons of category dublicated
+    return view('partials.recipes', compact('recipes'));
+}
 
 
  

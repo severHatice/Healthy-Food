@@ -42,6 +42,18 @@ public function averageRating()
         'category',
         'is_liked',
     ];
+
+    public function scopeSearch($query, $searchTerm)
+    {
+        if ($searchTerm) {
+            $query->where(function($query) use ($searchTerm) {
+                $query->where('title', 'like', '%' . $searchTerm . '%')
+                      ->orWhere('description', 'like', '%' . $searchTerm . '%');
+            });
+        }
+    }
+    
+    
     public function scopeFilter($query, array $filters)
     {
 

@@ -32,6 +32,19 @@ public function recettes()
         'daily_calorie_target'
     ];
 
+  // User.php (Model)
+
+public function scopeSearch($query, $term)
+{
+    if ($term) {
+        $query->where(function($subquery) use ($term) {
+            $subquery->where('username', 'like', "%{$term}%")
+                     ->orWhere('email', 'like', "%{$term}%");
+        });
+    }
+}
+
+
     /**
      * The attributes that should be hidden for serialization.
      *
