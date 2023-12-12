@@ -85,7 +85,7 @@
                                     <li><a href="/">Home</a></li>
                                     <li><a href="#recipes">Recipes</a></li>
                                     <li><a href="#about">About</a></li>
-                                    <li><a href="#calorieTracker">Calories</a></li>
+                                    <li><a id="caloryTracker" href="#caloryTracker">Calory Tracker</a></li>
                                     <li><a href="#contact">Contact</a></li>
                                     @auth
                                         <li><a href="/user/dashboard">{{ Auth::user()->username }}</a></li>
@@ -94,7 +94,7 @@
                                         @endif
 
                                         <li class="notifications-mail">
-                                            <a href="#" class="site-cart">
+                                            <a href="/inbox" class="site-cart">
                                                 <i class="fa-solid fa-envelope"></i>
                                                 <span class="count">2</span>
                                             </a>
