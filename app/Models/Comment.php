@@ -10,7 +10,7 @@ class Comment extends Model
 {
     use HasFactory;
 
-    protected $yhis = ['user'];
+    protected $this = ['user'];
 
 
     /**

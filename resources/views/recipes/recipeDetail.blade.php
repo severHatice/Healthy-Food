@@ -100,7 +100,7 @@
                                             <h2 class="font-bold text-slate-900 text-2xl">{{
                                             $comment->user->username }}</h2>
                                             <time class="mt-2 sm:mt-0 sm:ml-4 text-xs text-slate-400" datetime="
-                                          {{ $comment->created_at }}">@datetime($comment->created_at)</time>
+                                          {{ @datetime($comment->created_at) }}"></time>
                                         </div>
                                         <p class="mt-4 text-slate-800 sm:leading-loose">{{ $comment->content }}
 
