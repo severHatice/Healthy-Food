@@ -201,6 +201,11 @@ public function getRecipesByCategory($category)
     return view('recipes.recipeloop', compact('recipes'));
 }
 
+   //show detaille card with comments 
+   public function showDetails($recipeId){
+    $recipe = Recipe::findOrFail($recipeId);
+    return view('comments.createComment', ['recipe' => $recipe]);
+}
 
  
 }
