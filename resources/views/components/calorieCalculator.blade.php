@@ -27,7 +27,7 @@
 {
     position:absolute;
     top:295px;
-    background-color:darkgoldenrod;
+    background-color:darkgoldenrod;     
 }
 
 #calorieTrackerContainer h2
@@ -208,7 +208,7 @@ ul {list-style-type: none;}
                                     </div>
                                     <div>
                                         <label for="date"style="color:white;font-size:10px;">
-                                        Date (Format MM/YY/DD [Please only enter 12/23/your_day_here for now]):
+                                        Date (YYYY/MM/DD):
                                         </label>
                                         <input type="text" name="date" value="{{old('date')}}">
                                             @error('date')
@@ -448,7 +448,7 @@ for(i=0;i<dateEntries.length;i++){
         {
             text = "0" + text;
         }
-        let loopDay="12/23/" + text;
+        let loopDay="2023/12/" + text;
         let caloryData = loadCalories();
         //create table and calls create table function
         let currentTable = document.querySelector("#currentTable");
