@@ -2,7 +2,8 @@
 .menu-box{
 	padding: 70px 10%;
     /* background-color: var(--text-color); */
-    background-color: var(--bg-color);
+    /* background-color: var(--bg-color); */
+    background-color: white;
 }
 
 .heading-title{
@@ -10,13 +11,13 @@
     font-family: "Pacifico",sans-serif;
 }
 .heading-title h2{
-	color: var(--text-color);
+	color: var(--title-color);
 	font-size: 28px;
 }
 .heading-title p{
 	font-size: 18px;
-	font-weight: 200;
-    color: var(--text-color);
+	font-weight: 400;
+    color: var(--title-color);
 	margin: 0px;
     font-family: 'Poppins',sans-serif;
 }
@@ -61,6 +62,7 @@ button[data-filter] {
 
 .gallery-single{
 	margin: 30px 0px;
+    border-radius: 20px;
 }
 .special-grid.drinks{
    margin:10px auto;
@@ -128,6 +130,9 @@ button[data-filter] {
 .gallery-single:hover .why-text{
 	bottom: 0px;
 }
+.recipes-pagination{
+    margin-bottom:30px;
+}
 
 @media screen and (min-width: 720px) and (max-width: 1050px) {
     .menu-box {
@@ -153,17 +158,24 @@ button[data-filter] {
         font-size: 14px;
     }
     .special-grid{
-        width:400px !important
+        width:300px 
     }
 }
 
 @media screen and (min-width: 1050px) {
     .menu-box {
-        padding: 70px 50px; 
+        /* padding: 70px 50px;  */
     }
     .special-grid{
-        width:30% !important
+        /* width:400px !important */
     }
+    .special-grid.drinks{
+        margin:10px 0px;
+         
+     }
+     .gallery-single{
+         /* width:300px !important */
+     }
     
 }
 

@@ -5,11 +5,11 @@
     --btn-color: #e9967a;
     --title-color: #8b4513;
 /* rgba */
-    --bg-color-rgba: rgba(244, 164, 96, 0.6);
+    --bg-color-rgba: rgba(244, 164, 96, 0.8);
     --text-color-rgba: rgba(255, 222, 173, 0.3);
     --icons-color-rgba: rgba(218, 165, 32, 0.6);
-    --btn-color-rgba: rgba(233, 150, 122, 0.6);
-    --title-color-rgba: rgba(139, 69, 19, 0.5);
+    --btn-color-rgba: rgba(233, 150, 122, 0.9);
+    --title-color-rgba: rgba(139, 69, 19, 0.6);
 }
 
 
@@ -86,7 +86,7 @@ a.site-cart {
 }
 
 .main_menu_bg {
-    background: rgba(218, 165, 32, 0.6);
+    background: rgba(50, 50, 50, 0.8);
     height: 80px;
     position: relative;
 }
