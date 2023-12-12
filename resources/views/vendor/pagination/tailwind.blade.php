@@ -1,14 +1,14 @@
 @if ($paginator->hasPages())
-    <nav role="navigation" aria-label="{{ __('Pagination Navigation') }}" class="flex items-center justify-between">
-        <div class="flex justify-between flex-1 sm:hidden">
+    <nav role="navigation" aria-label="{{ __('Pagination Navigation') }}" class="flex items-center justify-between px-4">
+        <div class="flex justify-between flex-1 sm:hidden ">
             @if ($paginator->onFirstPage())
                 <span
-                    class="relative inline-flex items-center px-4 py-2 text-sm font-medium text-orange-500 bg-black border border-orange-300 cursor-default leading-5 rounded-md">
+                    class="sm:hidden relative inline-flex items-center px-4 py-2 text-sm font-medium text-orange-500 bg-black border border-orange-300 cursor-default leading-5 rounded-md">
                     {!! __('pagination.previous') !!}
                 </span>
             @else
                 <a href="{{ $paginator->previousPageUrl() }}"
-                    class="relative inline-flex items-center px-4 py-2 text-sm font-medium text-orange-700 bg-orange-300 border border-orange-300 leading-5 rounded-md hover:text-orange-500 focus:outline-none focus:ring ring-orange-300 focus:border-blue-300 active:bg-orange-100 active:text-orange-700 transition ease-in-out duration-150">
+                    class="sm:hidden  relative inline-flex items-center px-4 py-2 text-sm font-medium text-orange-700 bg-orange-300 border border-orange-300 leading-5 rounded-md hover:text-orange-500 focus:outline-none focus:ring ring-orange-300 focus:border-blue-300 active:bg-orange-100 active:text-orange-700 transition ease-in-out duration-150 ">
                     {!! __('pagination.previous') !!}
                 </a>
             @endif
@@ -26,7 +26,7 @@
             @endif
         </div>
 
-        <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
+        <div class=" sm:flex-1 sm:flex sm:items-center sm:justify-between">
             <div>
                 <p class="text-sm text-orange-700 leading-5">
                     {!! __('Showing') !!}
@@ -102,7 +102,7 @@
                     {{-- Next Page Link --}}
                     @if ($paginator->hasMorePages())
                         <a href="{{ $paginator->nextPageUrl() }}" rel="next"
-                            class="relative inline-flex items-center px-2 py-2 -ml-px text-sm font-medium text-orange-500 bg-orange-300 border border-orange-300 rounded-r-md leading-5 hover:text-orange-400 focus:z-10 focus:outline-none focus:ring ring-orange-300 focus:border-blue-300 active:bg-orange-100 active:text-orange-500 transition ease-in-out duration-150"
+                            class=" relative inline-flex items-center px-2 py-2 -ml-px text-sm font-medium text-orange-500 bg-orange-300 border border-orange-300 rounded-r-md leading-5 hover:text-orange-400 focus:z-10 focus:outline-none focus:ring ring-orange-300 focus:border-blue-300 active:bg-orange-100 active:text-orange-500 transition ease-in-out duration-150"
                             aria-label="{{ __('pagination.next') }}">
                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd"

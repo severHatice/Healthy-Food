@@ -40,9 +40,9 @@
             @include('partials._search')
             <div class="row special-list">
                 @foreach ($recipes as $recipe)
-                  <div class="  col-sm-10 special-grid drinks">
+                  <div class="col-sm-6 col-md-4 col-lg-3 special-grid drinks">
                     {{-- <x-recipes.card-homepage :recipe="$recipe" class="db-card"></x-recipes.card-homepage> --}}
-                    <div class="gallery-single fix">
+                    <div class="gallery-single ">
                      <img class="img-fluid" src="{{ asset('storage/' . json_decode($recipe->images)[0]) }}" alt="{{ $recipe->title }}">
                      <div class="why-text">
                          <h6>{{ $recipe->title }}</h6>
@@ -62,7 +62,7 @@
             </div>
         </div>
     </div>
-        <div class="users-pagination">
+        <div class="recipes-pagination">
             {{ $recipes->links() }}
         </div>
 </section>

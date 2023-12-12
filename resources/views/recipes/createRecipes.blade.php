@@ -41,7 +41,7 @@
             <option selected>Category</option>
             <option value="Breakfast">Breakfast</option>
             <option value="Lunch">Lunch</option>
-            <option value="Desserts">Desserts</option>
+            <option value="Dessert">Desserts</option>
             <option value="Dinner">Dinner</option>
         </select>
         <button type="submit" class="btn btn-primary">Add Recipe</button>
