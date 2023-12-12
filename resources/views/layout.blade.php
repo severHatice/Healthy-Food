@@ -79,7 +79,7 @@
                     <nav class="navbar navbar-default">
                         <div class="container-fluid">
                             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                                <img src="/images/logo5.png" alt="logo-foods" class="logo">
+                                <img src="/images/Yellow Abstract Cooking Fire Free Logo.jpg" alt="logo-foods" class="logo">
                                 <ul class="nav navbar-nav navbar-right">
 
                                     <li><a href="/">Home</a></li>

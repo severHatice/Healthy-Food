@@ -1,9 +1,11 @@
 @extends('users.user-dashboard.user-layout')
 
 @section('content')
+<div class="container">
+<div class="containerCreateUser">
     <form action="{{ route('createRecipes') }}" method="POST" enctype="multipart/form-data">
         @csrf
-        <h1>Create your Recipe</h1>
+        <h1 class="title">Create your Recipe</h1>
         <div class="mb-3 col-12">
 
             <label for="title" class="form-label">Title</label>
@@ -11,7 +13,7 @@
                 placeholder="title">
         </div>
         <div class="mb-3">
-            <input type="file" name="image">
+            <input type="file" name="image" class="buttonImg">
         </div>
         <div class="mb-3">
             <label for="description" class="form-label">Description</label>
@@ -32,20 +34,29 @@
         </div>
         <div class="mb-3 col-12" id="ingredients-container">
             <div class = "mb-6 ingredient-input">
-                <label for="ingredients">Ingredient Name</label>
+                <label for="ingredients" class="form-label">Ingredient Name</label>
                 <input class="mb-3 col-12 h-12" type="text" name="ingredients[][name]" >
             </div>
         </div>
-        <button type="button" onclick="addIngredient()" class="btn">Add Ingredient</button>
+        <button type="button"  id="btn-addIngredient" onclick="addIngredient()" class="btn-btn">Add Ingredient</button>
         <select class="form-select form-select-lg mb-3" aria-label="Large select example" name="category">
             <option selected>Category</option>
             <option value="Breakfast">Breakfast</option>
             <option value="Lunch">Lunch</option>
-            <option value="Desserts">Desserts</option>
+            <option value="Dessert">Desserts</option>
             <option value="Dinner">Dinner</option>
         </select>
-        <button type="submit" class="btn btn-primary">Add Recipe</button>
+        <button type="submit" id="btn-addRecipe" class="btn-btn">Add Recipe</button>
     </form>
+
+
+
+
+    <!-- SweetAlert2 here we used a library -->
+    @component('components.error-popup')
+    @endcomponent    
+</div>
+</div>
     <script>
         function addIngredient() {
             let container = document.getElementById('ingredients-container');
@@ -61,8 +72,4 @@
             container.appendChild(newIngredient);
         }
     </script>
-
-    <!-- SweetAlert2 here we used a library -->
-    @component('components.error-popup')
-    @endcomponent
 @endsection

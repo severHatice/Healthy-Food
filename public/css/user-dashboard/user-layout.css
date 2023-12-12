@@ -9,7 +9,7 @@ i.fa-solid {
 .header {
     position: relative;
     background-color: var(--icons-color);
-    padding: 10px 0;
+    padding: 20px 0;
     box-shadow: 6px 6px 15px var(--title-color);
     z-index:5
 }
@@ -28,7 +28,7 @@ i.fa-solid {
 }
 
 .logo img {
-    height: 150px;
+    height: 160px;
     margin-left: 50px;
 }
 
@@ -37,22 +37,25 @@ i.fa-solid {
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    font-size: 20px;
 }
 
 .navbar-nav {
     list-style: none;
     display: flex;
     margin-left: auto;
+
 }
 
 .nav-item {
+   
     padding: 0 15px;
 }
 
 .nav-link {
     color: var(--title-color);
     text-decoration: none;
-    font-size: 18px;
+    font-size: 22px;
     font-weight: bold;
 }
 
@@ -61,7 +64,9 @@ i.fa-solid {
 }
 
 .sign_btn {
-    margin-left: auto;
+    margin-left: 5px;
+    margin-right: 5px;
+    
 }
 
 .sign_btn a {
@@ -100,3 +105,6 @@ i.fa-solid {
     background: rgba(235, 235, 235, 0.4);
     z-index: 2;
 } */
+.notifications-mail{
+    display: none;
+}

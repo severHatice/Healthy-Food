@@ -99,8 +99,10 @@
                                         <div class="flex flex-col sm:flex-row sm:items-center">
                                             <h2 class="font-bold text-slate-900 text-2xl">{{
                                             $comment->user->username }}</h2>
-                                            <time class="mt-2 sm:mt-0 sm:ml-4 text-xs text-slate-400" datetime="
-                                          {{ @datetime($comment->created_at) }}"></time>
+                                          <time class="mt-2 sm:mt-0 sm:ml-4 text-xs text-slate-400" datetime="{{ $comment->created_at->format('Y-m-d H:i:s') }}">
+                                            {{ $comment->created_at->format('Y-m-d H:i:s') }}
+                                        </time>
+                                        
                                         </div>
                                         <p class="mt-4 text-slate-800 sm:leading-loose">{{ $comment->content }}
 
