@@ -94,7 +94,7 @@
                                         @endif
 
                                         <li class="notifications-mail">
-                                            <a href="#" class="site-cart">
+                                            <a href="/inbox" class="site-cart">
                                                 <i class="fa-solid fa-envelope"></i>
                                                 <span class="count">2</span>
                                             </a>

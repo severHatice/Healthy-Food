@@ -117,3 +117,8 @@ Route::post('/calorieTracker', [CaloryController::class, 'addFoodItem']);
 Route::get('/calorieTracker', [CaloryController::class, 'getDailyCalories']);
 // get recipes from categories
 Route::get('/recipes/category/{category}', [RecipeController::class, 'getRecipesByCategory']);
+
+//ROUTE FOR INBOX
+Route::get('/inbox',function(){
+    return view('inbox');
+});
