@@ -4,13 +4,23 @@ namespace App\Http\Controllers;
 
 use App\Models\Rating;
 use App\Models\Recipe;
+use App\Models\Comment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\RedirectResponse;
+
 
 class RecipeController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth')->only('comment');
+    }
+
+
     public function createRecipeForm()
     {
         return view('recipes.createRecipes');
@@ -207,5 +217,18 @@ public function getRecipesByCategory($category)
     return view('comments.createComment', ['recipe' => $recipe]);
 }
 
- 
+public function comment(recipe $recipe, Request $request): RedirectResponse
+{
+    $validated = $request->validate([
+        'comment' => ['required', 'string', 'between:2,255'],
+    ]);
+
+    Comment::create([
+        'content' => $validated['comment'],
+        'recipe_id' => $recipe->id,
+        'user_id' => Auth::id(),
+    ]);
+
+    return back()->withStatus('Commentaire publié !');
+}
 }

@@ -12,12 +12,6 @@ class Comment extends Model
 
     protected $yhis = ['user'];
 
-    public function user(): BelongsTo
-    {
-        return $this->BelongsTo(User::class);
-    }
-
-    
 
     /**
      * The attributes that are mass assignable.
@@ -25,8 +19,16 @@ class Comment extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'comment',
+        'content',
         'recipe_id',
         'user_id',
     ];
+
+    public function user(): BelongsTo
+    {
+        return $this->BelongsTo(User::class);
+    }
+
+   
+
 }
