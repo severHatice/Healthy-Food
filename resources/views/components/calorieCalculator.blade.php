@@ -27,11 +27,12 @@
 {
     position:absolute;
     top:295px;
+    background-color:darkgoldenrod;
 }
 
 #calorieTrackerContainer h2
 {
- color:#1abc9c;
+ color:darkgoldenrod;
  position:relative;
  left:17%;
  padding-bottom:35px;
@@ -60,7 +61,7 @@
 }
 #calorieDiv
 {
-    height:3000px;
+    height:681px;
     position:relative;
     left:-0px;
     
@@ -81,7 +82,7 @@ ul {list-style-type: none;}
 .calender {
     font-family: Verdana, sans-serif;
     position:relative;
-    top:-2535px;
+    top:-265px;
     border-radius:60px;
     width:60%;
     left:15%;
@@ -93,7 +94,7 @@ ul {list-style-type: none;}
 .month {
   padding: 5px 5px;
   width: 100%;
-  background: #1abc9c;
+  background: 	darkgoldenrod;
   text-align: center;
 }
 
@@ -154,7 +155,7 @@ ul {list-style-type: none;}
 
 .days li .active {
   padding: 5px;
-  background: #1abc9c;
+  background: darkgoldenrod;
   color: white !important
 }
 
