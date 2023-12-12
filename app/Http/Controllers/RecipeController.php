@@ -4,13 +4,23 @@ namespace App\Http\Controllers;
 
 use App\Models\Rating;
 use App\Models\Recipe;
+use App\Models\Comment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\RedirectResponse;
+
 
 class RecipeController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth')->only('comment');
+    }
+
+
     public function createRecipeForm()
     {
         return view('recipes.createRecipes');
@@ -131,7 +141,7 @@ public function rate(Request $request, Recipe $recipe)
     }
 
   // After updating/adding the rating
-  $newAverageRating = $recipe->averageRating();
+  $newAverageRating = floatval($recipe->averageRating());
     $ratingsCount = $recipe->ratings()->count();
 
 // TODO: there is a problem the response is not dans un format attended ??  
@@ -190,7 +200,7 @@ public function deleteRecipe(Recipe $recipe)
 public function homepage(Request $request) {
     $searchTerm = $request->input('searchform');
     $recipes = Recipe::search($searchTerm)
-                     ->paginate(3);
+                     ->paginate(5);
     return view('homepage', compact('recipes')); 
 }
 // get recipes from categories
@@ -198,7 +208,7 @@ public function getRecipesByCategory($category)
 {
     $recipes = Recipe::where('category', $category)->paginate(2);
     // ddd($recipes);//TODO:recipes come once as wished but buttons of category dublicated
-    return view('partials.recipes', compact('recipes'));
+    return view('recipes.recipeloop', compact('recipes'));
 }
 
    //show detaille card with comments 
@@ -207,5 +217,18 @@ public function getRecipesByCategory($category)
     return view('comments.createComment', ['recipe' => $recipe]);
 }
 
- 
+public function comment(recipe $recipe, Request $request): RedirectResponse
+{
+    $validated = $request->validate([
+        'comment' => ['required', 'string', 'between:2,255'],
+    ]);
+
+    Comment::create([
+        'content' => $validated['comment'],
+        'recipe_id' => $recipe->id,
+        'user_id' => Auth::id(),
+    ]);
+
+    return back()->withStatus('Commentaire publié !');
+}
 }

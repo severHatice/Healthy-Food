@@ -115,10 +115,9 @@ Route::get('/', [RecipeController::class, 'homepage'])->name('homepage2');
 // calory controller https requests and forms
 Route::post('/calorieTracker', [CaloryController::class, 'addFoodItem']);
 Route::get('/calorieTracker', [CaloryController::class, 'getDailyCalories']);
+
 // get recipes from categories
 Route::get('/recipes/category/{category}', [RecipeController::class, 'getRecipesByCategory']);
 
-//ROUTE FOR INBOX
-Route::get('/inbox',function(){
-    return view('inbox');
-});
+Route::post('/{recipe}/comment', [RecipeController::class, 'comment'])->name('recipe.comment');
+

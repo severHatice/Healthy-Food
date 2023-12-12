@@ -1,25 +1,25 @@
 /* contact section */
 
 .contact {
-    background: #042431;
-    margin-top: 90px;
+    background: var(--bg-color);
     padding: 90px 0;
 }
 
 .contact .titlepage h2 {
-    color: #fff;
+    color: var(--title-color);
+    text-align: center;
+    margin: 20px 0;
+    font-size: 1.9em;
 }
 
 .main_form .contactus {
-    border: inherit;
-    margin-bottom: 20px;
     width: 100%;
     height: 60px;
     background: transparent;
-    color: #f9fcfd;
+    color:  var(--text-color) ;
     font-size: 18px;
     font-weight: normal;
-    border-bottom: #fff solid 1px;
+    border:  var(--title-color)  solid 3px;
 }
 
 .main_form .send_btn {
@@ -28,8 +28,8 @@
     background-color: transparent;
     text-transform: uppercase;
     font-weight: 500;
-    border: #00aeef solid 3px;
-    color: #f9fcfd;
+    border: var(--title-color) solid 3px;
+    color:  var(--text-color) ;
     padding: 8px 0px;
     margin: 0 auto;
     max-width: 180px;
@@ -40,12 +40,7 @@
 }
 
 .main_form .send_btn:hover {
-    background-color: #00aeef;
+    background-color:  var(--icons-color) ;
     transition: ease-in all 0.5s;
-    color: #fff;
-}
-
-#request *::placeholder {
-    color: #f9fcfd;
-    opacity: 1;
+    color:  white ;
 }

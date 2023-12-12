@@ -80,7 +80,7 @@ public function averageRating()
 
         $formattedTime = '';
         if ($hours > 0) {
-            $formattedTime .= $hours . ' hours ';
+            $formattedTime .= $hours . ' h ';
         }
         if ($minutes > 0) {
             $formattedTime .= $minutes ;
