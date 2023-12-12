@@ -200,7 +200,7 @@ public function deleteRecipe(Recipe $recipe)
 public function homepage(Request $request) {
     $searchTerm = $request->input('searchform');
     $recipes = Recipe::search($searchTerm)
-                     ->paginate(3);
+                     ->paginate(5);
     return view('homepage', compact('recipes')); 
 }
 // get recipes from categories
