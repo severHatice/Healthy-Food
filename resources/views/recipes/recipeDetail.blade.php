@@ -114,12 +114,12 @@
                    
                     <div class="buttons-detail-recette ">
                         <div class="col-4 ">
-                            <a href="{{ route('recipe.edit', $recipe->id) }}" class="btn btn-primary w-100">Edit</a>
+                            <a href="{{ route('recipe.edit', $recipe->id) }}" class="btn-btn recipe-edit-btn w-100">Edit</a>
                         </div>
-                        <form action="{{ route('recipe.delete', $recipe->id) }}" method="POST" class="col-4 mt-0 delete-btn">
+                        <form action="{{ route('recipe.delete', $recipe->id) }}" method="POST" class="col-4 mt-0 delete-btn-container">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger w-100">Delete</button>
+                            <button type="submit" class="recipe-delete-btn w-100">Delete</button>
                         </form>
                     </div>
                 </div>
@@ -138,50 +138,109 @@
             {{ session('message') }}
         </div>
     @endif
-    {{-- rating part update script --}}
+
     <script>
-        $(document).ready(function() {
-            $('.rate-star').click(function(e) {
-                e.preventDefault();
-                let rating = $(this).data('rating');
-                let recipeId = "{{ $recipe->id }}";
-                let url = "{{ route('recipes.rate', $recipe->id) }}";
-
-                $.ajax({
-                    url: url,
-                    type: 'POST',
-                    data: {
-                        "_token": "{{ csrf_token() }}",
-                        "rating": rating,
-                        "recipe_id": recipeId
-                    },
-                    success: function(response) {
-                        console.log('Response successfully:', response);
-                        if (response.newAverageRating !== undefined && response.ratingsCount !==
-                            undefined) {
-                            updateStarRating(response.newAverageRating);
-                            $('.star-rating').next('span').text(response.newAverageRating
-                                .toFixed(1) + '/5 (' + response.ratingsCount + ' ratings)');
+        if (!window.ratingEventAdded) {//added because we send 2 times post for rate endpoint to db
+            document.addEventListener('DOMContentLoaded', function() {
+                const rateStars = document.querySelectorAll('.rate-star');
+                rateStars.forEach(star => {
+                    star.addEventListener('click', function(e) {
+                        // e.preventDefault();
+                        let rating = this.dataset.rating;
+                        let recipeId = "{{ $recipe->id }}";
+                        let url = "{{ route('recipes.rate', $recipe->id) }}";
+    
+                        axios.post(url, {
+                            rating: rating,
+                            recipe_id: recipeId,
+                            _token: "{{ csrf_token() }}"
+                        })
+                        .then(response => {
+                            const newAverageRating = parseFloat(response.data.newAverageRating);
+                            if (!isNaN(newAverageRating)) {
+                                updateStarRating(newAverageRating);
+                                updateRatingText(newAverageRating, response.data.ratingsCount);
+                            }
+                        })
+                        .catch(error => {
+                            console.error('Error:', error);
+                        });
+                    });
+                });
+    
+                function updateStarRating(newAverageRating) {
+                    rateStars.forEach(star => {
+                        let starRatingValue = parseInt(star.dataset.rating);
+                        let icon = star.querySelector('i');
+                        if (starRatingValue <= newAverageRating) {
+                            icon.classList.add('checked');
+                            icon.classList.remove('empty-stars');
                         } else {
-                            console.error('response is not dans un format attended:', response);
+                            icon.classList.remove('checked');
+                            icon.classList.add('empty-stars');
                         }
-                    },
-                    error: function(xhr, status, error) {
-                        console.error('There is an error for ajax response:', error);
+                    });
+                }
+    
+                function updateRatingText(newAverageRating, ratingsCount) {
+                    const ratingSpan = document.querySelector('.star-rating + span');
+                    if (ratingSpan) {
+                        ratingSpan.textContent = newAverageRating.toFixed(1) + '/5 (' + ratingsCount + ' ratings)';
+                        console.log("Rating text updated: ", ratingSpan.textContent);
                     }
-                });
+                }
+    
+                window.ratingEventAdded = true;
             });
-
-            function updateStarRating(newAverageRating) {
-                $('.star-rating i').each(function() {
-                    let starRatingValue = parseInt($(this).data('rating-value'));
-                    $(this).toggleClass('checked', starRatingValue <= newAverageRating);
-                });
-            }
-        });
+        }
     </script>
+    
+    
+    
+    // {{-- rating part update script --}}
+    // {{-- <script>
+    //     $(document).ready(function() {
+    //         $('.rate-star').click(function(e) {
+    //             e.preventDefault();
+    //             let rating = $(this).data('rating');
+    //             let recipeId = "{{ $recipe->id }}";
+    //             let url = "{{ route('recipes.rate', $recipe->id) }}";
 
-    {{-- when clicked icon heart to like it, we take event and connect db with ajax --}}
+    //             $.ajax({
+    //                 url: url,
+    //                 type: 'POST',
+    //                 data: {
+    //                     "_token": "{{ csrf_token() }}",
+    //                     "rating": rating,
+    //                     "recipe_id": recipeId
+    //                 },
+    //                 success: function(response) {
+    //                     console.log('Response successfully:', response);
+    //                     if (response.newAverageRating !== undefined && response.ratingsCount !==
+    //                         undefined) {
+    //                         updateStarRating(response.newAverageRating);
+    //                         $('.star-rating').next('span').text(response.newAverageRating
+    //                             .toFixed(1) + '/5 (' + response.ratingsCount + ' ratings)');
+    //                     } else {
+    //                         console.error('response is not dans un format attended:', response);
+    //                     }
+    //                 },
+    //                 error: function(xhr, status, error) {
+    //                     console.error('There is an error for ajax response:', error);
+    //                 }
+    //             });
+    //         });
+
+    //         function updateStarRating(newAverageRating) {
+    //             $('.star-rating i').each(function() {
+    //                 let starRatingValue = parseInt($(this).data('rating-value'));
+    //                 $(this).toggleClass('checked', starRatingValue <= newAverageRating);
+    //             });
+    //         }
+    //     });
+    // </script> --}}
+
+    // {{-- when clicked icon heart to like it, we take event and connect db with ajax --}}
     <script>
         $(document).ready(function() {
             $('.like-icon button').click(function(e) {
@@ -200,7 +259,7 @@
                         "_token": "{{ csrf_token() }}",
                     },
                     success: function(response) {
-                        console.log('Başarılı Yanıt:', response);
+                        console.log('Success for like:', response);
                         let likeText = response.likes + ' ' + (response.likes === 1 || response
                             .likes === 0 ? 'like' :
                             'likes');
@@ -217,7 +276,7 @@
 
 
                     error: function(xhr, status, error) {
-                        console.error('AJAX Hatası:', error);
+                        console.error('AJAX Error:', error);
                         console.error('AJAX Error:', error);
                     }
                 });

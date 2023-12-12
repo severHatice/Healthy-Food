@@ -3,19 +3,14 @@
        <div class="row">
           <div class="col-md-12">
              <div class="titlepage">
-                <h2>Reqeste A call back</h2>
+                <h2>Send us your messages</h2>
              </div>
           </div>
           <div class="col-md-6 offset-md-3">
              <form id="request" class="main_form" action="/contact" method="POST">
                @csrf 
                <div class="row">
-                   <div class="col-md-12">
-                      <input class="contactus" placeholder="Full Name" type="text" name="name"> 
-                   </div>
-                   <div class="col-md-12">
-                      <input class="contactus" placeholder="Email" type="email" name="email">                          
-                   </div>
+                
                    <div class="col-md-12">
                       <textarea class="contactus" placeholder="Message" type="text"  name="message"> </textarea>
                    </div>
