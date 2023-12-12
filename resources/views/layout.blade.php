@@ -45,7 +45,7 @@
     <link rel="stylesheet" href="{{ asset('css/login.css') }}">
 
     {{-- custon css --}}
-    <link rel="stylesheet" href="{{ asset('css/contact.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/homepage/contact.css') }}">
 
     <!--Theme Responsive css-->
     <link rel="stylesheet" href="{{ asset('css/responsive.css') }}" />

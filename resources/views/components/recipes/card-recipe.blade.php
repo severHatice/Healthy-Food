@@ -10,6 +10,6 @@
         <p class="card_recipe_text">{{ $recipe->category }}</p>
         <p>{{ $recipe->is_liked }} likes</p>
         <p>Average Rating: {{ round($recipe->averageRating(), 1) }}/5</p>
-        <a href="{{ route('recipe-detail.show', ['recipe' => $recipe->id, 'ref' => 'user-dashboard']) }}">Detay</a>
+        <a id="card-recipe-btn" class="btn-btn" href="{{ route('recipe-detail.show', ['recipe' => $recipe->id, 'ref' => 'user-dashboard']) }}">View</a>
     </div>
 </div>

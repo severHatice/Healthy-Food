@@ -131,7 +131,7 @@ public function rate(Request $request, Recipe $recipe)
     }
 
   // After updating/adding the rating
-  $newAverageRating = $recipe->averageRating();
+  $newAverageRating = floatval($recipe->averageRating());
     $ratingsCount = $recipe->ratings()->count();
 
 // TODO: there is a problem the response is not dans un format attended ??  
@@ -198,7 +198,7 @@ public function getRecipesByCategory($category)
 {
     $recipes = Recipe::where('category', $category)->paginate(2);
     // ddd($recipes);//TODO:recipes come once as wished but buttons of category dublicated
-    return view('partials.recipes', compact('recipes'));
+    return view('recipes.recipeloop', compact('recipes'));
 }
 
 
