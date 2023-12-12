@@ -4,13 +4,38 @@
 /* Added css for calorieDiv */
 #calorieTrackerContainer
 {
-    display:flex;
+    display:none;
     flex-direction: column;
     position:absolute;
     top:80px;
     width:400px;
+    visibility:initial;
 
 }
+@keyframes glideIn {
+  from {left: -400px;}
+  to {left:0px;}
+  
+}
+@keyframes glideOut {
+  0% {left: 0px;}
+  100% {left:-400px;}
+}
+
+.slideOut{
+    animation: glideOut 1s;
+    animation-fill-mode: forwards; 
+}
+
+.slideIn
+{   
+    animation: glideIn 1s;
+    animation-fill-mode: forwards; 
+
+}
+
+
+
 .caloryTrackerDisabledText
 {
     position:relative;
@@ -178,7 +203,7 @@ ul {list-style-type: none;}
 }
 </style>
 
-<div id="calorieTrackerContainer">
+<div id="calorieTrackerContainer" class="slideOut">
 <div class="slider_overlay" id="calorieDiv">
 <h2>Calorie Tracker</h2>
             <div>
@@ -194,14 +219,14 @@ ul {list-style-type: none;}
                                 <div id="calorieFormFields">
                                     <div>
                                         <label for="food_item" style="color:white;font-size:10px;">Food Item: </label>
-                                        <input type="text" name="food_item" value="{{old('food_item')}}"/>
+                                        <input type="text" class="form-control" name="food_item" value="{{old('food_item')}}"/>
                                         @error('food_item')
                                             <p style="color:red;font-size:10px;">{{ $message }}</p>
                                         @enderror
                                     </div>
                                     <div>
                                         <label for="calories"style="color:white;font-size:10px;">Calories: </label>
-                                        <input type="text" name="calories_number" value="{{old('calories_number')}}" />
+                                        <input type="text" class="form-control" name="calories_number" value="{{old('calories_number')}}" />
                                             @error('calories_number')
                                                 <p style="color:red;font-size:10px;">{{ $message }}</p>
                                             @enderror
@@ -210,7 +235,7 @@ ul {list-style-type: none;}
                                         <label for="date"style="color:white;font-size:10px;">
                                         Date (Format MM/YY/DD [Please only enter 12/23/your_day_here for now]):
                                         </label>
-                                        <input type="text" name="date" value="{{old('date')}}">
+                                        <input type="text" class="form-control" name="date" value="{{old('date')}}">
                                             @error('date')
                                                 <p style="color:red;font-size:10px;">{{ $message }}</p>
                                             @enderror
@@ -220,7 +245,7 @@ ul {list-style-type: none;}
                                         <label for="time"style="color:white;font-size:10px;">
                                             Time: (HH:MM example: 17:45)
                                         </label>
-                                        <input type="text" name="time" value="{{old('time')}}">
+                                        <input type="text" class="form-control" name="time" value="{{old('time')}}">
                                             @error('time')
                                                 <p style="color:red;font-size:10px;">{{ $message }}</p>
                                             @enderror
@@ -532,9 +557,25 @@ Promise.all([promise1]).then(function(values){
     return myOutput;
 }
 
+document.querySelector("#caloryTracker").addEventListener("click",()=>{
 
-
-
+    
+    console.log("helloTest");
+    //document.querySelector("#calorieTrackerContainer").classList.toggle("hidden")
+    if(document.querySelector("#calorieTrackerContainer").style.display === "none")
+    {
+        document.querySelector("#calorieTrackerContainer").style.display="flex";
+        document.querySelector("#calorieTrackerContainer").classList.toggle("slideIn");
+        document.querySelector("#calorieTrackerContainer").classList.toggle("slideOut");
+    }
+    else
+    {
+        document.querySelector("#calorieTrackerContainer").classList.toggle("slideIn");
+        document.querySelector("#calorieTrackerContainer").classList.toggle("slideOut");
+        document.querySelector("#calorieTrackerContainer").style.display = "flex";
+        
+    }
+})
 </script>
 
 
