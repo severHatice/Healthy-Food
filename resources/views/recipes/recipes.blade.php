@@ -25,7 +25,7 @@
 </div>
 
   
-
+{{-- 
 <div class="users-pagination">
     {{ $recipes->links() }}
-</div> 
+</div>  --}}

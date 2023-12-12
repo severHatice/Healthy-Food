@@ -5,14 +5,14 @@
 
 .footer-section {
   font-family: robot;
-  background: #151414;
+  background:  #f4a460;
   position: relative;
 }
 .footer-cta {
   border-bottom: 1px solid #373636;
 }
 .single-cta i {
-  color: #31c587;
+  color: #8b4513;
   font-size: 30px;
   float: left;
   margin-top: 8px;
@@ -52,7 +52,7 @@
 .footer-text p {
   margin-bottom: 14px;
   font-size: 14px;
-      color: #7e7e7e;
+  color: white;
   line-height: 28px;
 }
 .footer-social-icon span {
@@ -64,7 +64,7 @@
   margin-bottom: 20px;
 }
 .footer-social-icon a {
-  color: #fff;
+  color: #8b4513;
   font-size: 16px;
   margin-right: 15px;
 }
@@ -98,7 +98,7 @@
   bottom: -15px;
   height: 2px;
   width: 50px;
-  background: #72ba9c;
+  background:  #8b4513;
 }
 .footer-widget ul li {
   display: inline-block;
@@ -107,10 +107,10 @@
   margin-bottom: 12px;
 }
 .footer-widget ul li a:hover{
-  color:  #72ba9c;
+  color:  #8b4513;
 }
 .footer-widget ul li a {
-  color: #878787;
+  color: #8b4513;
   text-transform: capitalize;
 }
 .subscribe-form {
@@ -122,14 +122,14 @@
   padding: 14px 28px;
   background: #2E2E2E;
   border: 1px solid #2E2E2E;
-  color: #fff;
+  color:  #8b4513;
 }
 .subscribe-form button {
     position: absolute;
     right: 0;
-    background:  #72ba9c;
+    background:  #8b4513;
     padding: 13px 20px;
-    border: 1px solid  #72ba9c;
+    border: 1px solid   #8b4513;
     top: 0;
 }
 .subscribe-form button i {
@@ -141,23 +141,12 @@
   background: #202020;
   padding: 20px 0;
 }
+.copyright-text {
+  text-align: center;
+}
 .copyright-text p {
-  text-align: center;  
-  margin: 0;
+  
   font-size: 20px;
   color: #878787;
 }
-.copyright-text p a{
-  color: #72ba9c;
-}
-.footer-menu li {
-  display: inline-block;
-  margin-left: 20px;
-}
-.footer-menu li:hover a{
-  color:  #72ba9c;
-}
-.footer-menu li a {
-  font-size: 14px;
-  color: #878787;
-}
+
