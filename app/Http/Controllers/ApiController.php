@@ -25,6 +25,7 @@ class ApiController extends Controller
         $recipes = $response->json();
 
         // Check if the 'results' key exists in the response
+        
         $recipesData = isset($recipes['results']) ? $recipes['results'] : [];
 
         return view('recipes', [
