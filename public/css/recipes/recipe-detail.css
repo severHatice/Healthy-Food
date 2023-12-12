@@ -132,12 +132,40 @@
 /* buttons delete and edit*/
 .buttons-detail-recette{
     display: flex;
-  margin-top: 10px;
-  padding: 10px;
-    gap: 10px;
+    gap: 180px;
 }
-.delete-btn{
+.delete-btn-container{
     border:none;
     padding:0;
+    background-color: var(--text-color);
 }
+/* customized style because of its special issue */
+.recipe-delete-btn{
+    font-size: 17px;
+    transition: ease-in all 0.5s;
+    text-transform: uppercase;
+    font-weight: 500;
+    border: var(--title-color) solid 3px;
+    color: var(--title-color);
+    padding: 8px 0px;
+    margin: 0 auto;
+    max-width: 180px;
+    width: 100%;
+    display: block;
+    border-radius: 30px;
+    margin-top: 30px;
+ 
+}
+.recipe-delete-btn:hover{
+    background-color:var(--icons-color);
+    transition: ease-in all 0.5s;
+    color: white;
+}
+.recipe-edit-btn{
+    color: var(--title-color);
+    text-align: center;
+}
+
+    
+
 

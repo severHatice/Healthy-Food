@@ -1,22 +1,24 @@
 
 .menu-box{
-	padding: 70px 0px;
-    background-color: var(--text-color);
-    /* background-color: red; */
-    height: 900px;
+	padding: 70px 10%;
+    /* background-color: var(--text-color); */
+    background-color: var(--bg-color);
 }
 
 .heading-title{
 	margin-bottom: 50px;
+    font-family: "Pacifico",sans-serif;
 }
 .heading-title h2{
-	color: var(--title-color);
+	color: var(--text-color);
 	font-size: 28px;
 }
 .heading-title p{
 	font-size: 18px;
 	font-weight: 200;
+    color: var(--text-color);
 	margin: 0px;
+    font-family: 'Poppins',sans-serif;
 }
 
 .filter-button-group {
@@ -24,6 +26,10 @@
     border-radius: 4px;
     margin: 10px 15px;
     display: inline-block;
+  
+}
+button[data-filter] {
+    margin-top: 20px;  
 }
 
 .filter-button-group button {
@@ -33,29 +39,36 @@
     font-weight: 600;
     font-size: 14px;
     cursor: pointer;
-    background: var(--bg-color);
+    background: var(--text-color);
     padding: 12px 40px;
     border: none;
     border-radius: 4px;
 }
-/* it doesnt work?????????????? */
+.filter-button-group button:hover{
+    background: var(--title-color);
+    color: var(--text-color); 
+}
+/*! it doesnt work?????????????? */
 .recip-container::before,.recip-container::after{
     content:"";
 }
 
-.filter-button-group button.active {
+/* .filter-button-group button.active {
     background: var(--bg-color);
     color: var(--text-color);
     box-shadow: 2px 20px 45px 5px rgba(0,0,0,.2);
-}
+} */
 
 .gallery-single{
 	margin: 30px 0px;
 }
 .special-grid.drinks{
-    /* height: 500px; */
-    width:320px;
+   margin:10px auto;
     
+}
+/* because of bootstrap put here this one */
+.row{
+    margin-right: -35px !important;
 }
 
 .gallery-single {
@@ -81,30 +94,78 @@
     background: rgba(233, 158, 59, 0.9);
     padding: 12px 12px;
     transition: all .3s ease;
+    text-align: center;
 }
-.why-text h6{
-	color: var(--title-color);
-	font-size: 24px;
-	font-weight: 500;
-	font-family: 'Arbutus Slab', serif;
+
+.why-text h4{
+    color: var(--title-color);
 }
-.why-text p,.heading-text{
+.why-text p,.heading-text,.why-text h4,.why-text h6,.rating-like-card-container{
 	color: var(--title-color);
 	font-size: 18px;
 	border-bottom: 1px dashed var(--title-color);
 	margin: 0px;
-	padding-bottom: 15px;
-	margin-top: 15px;
-	margin-bottom: 15px;
+	padding-bottom: 7px;
+	margin-top: 10px;
+	margin-bottom: 7px;
 }
 .why-text h6{
 	font-size: 28px;
 	font-weight: 600;
     color: var(--title-color);
 }
+#recipes-homepage-btn{
+    width: 170px;
+    height: 40px;
+    margin-top: 0px;
+}
+#recipes-homepage-btn:hover{
+    text-decoration: none;
+    background-color: var(--text-color);
+    color: var(--title-color);
+}
 
 .gallery-single:hover .why-text{
 	bottom: 0px;
 }
+
+@media screen and (min-width: 720px) and (max-width: 1050px) {
+    .menu-box {
+        padding: 50px 5%; 
+    }
+    .heading-title h2 {
+        font-size: 24px; 
+    }
+    .heading-title p {
+        font-size: 16px; 
+    }
+    .filter-button-group button {
+        padding: 10px 20px; 
+        font-size: 12px; 
+    }
+    .gallery-single {
+        margin: 15px 0; 
+    }
+    .gallery-single .why-text h6 {
+        font-size: 20px; 
+    }
+    .gallery-single .why-text p {
+        font-size: 14px;
+    }
+    .special-grid{
+        width:400px !important
+    }
+}
+
+@media screen and (min-width: 1050px) {
+    .menu-box {
+        padding: 70px 50px; 
+    }
+    .special-grid{
+        width:30% !important
+    }
+    
+}
+
 
 
