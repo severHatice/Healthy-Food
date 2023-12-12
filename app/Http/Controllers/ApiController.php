@@ -22,7 +22,6 @@ class ApiController extends Controller
             'q' => $request->input('query'),
             // Add other parameters as needed
         ]);
-
         $recipes = $response->json();
 
         // Check if the 'results' key exists in the response
