@@ -38,7 +38,11 @@
 }
 
 .make-admin-btn {
-    background-color: var(--btn-color) !important;
+    /* background-color: var(--btn-color) !important; */
+    border: none;
+}
+.make-admin-container:hover {
+    background-color: var(--text-color) !important;
     border: none;
 }
 .make-admin-span {
@@ -46,10 +50,34 @@
 }
 
 /* edit form css */
+.edit-uder-title{
+    font-size:1.6em;
+    margin-bottom:20px
+}
+
 
 .form-group label {
-    color: var(--icons-color);
+    color: var(--title-color);
+    font-size: 1.2em;
 }
+#edit-uder-btn{
+    color: var(--title-color);
+    font-weight: 400;
+}
+.edituser-container input[type="text"],
+.edituser-container input[type="email"],
+.edituser-container input[type="number"] {
+    background-color: var(--bg-color); 
+    color: var(--title-color); 
+}
+
+.edituser-container input::placeholder {
+    color: var(--title-color);
+}
+.edituser-container input{
+    border-radius: 10px;
+}
+
 
 .edituser-container {
     /* width: 400px; */
@@ -63,17 +91,17 @@
 /* les buttons edit-delete */
 #edit-user-btn,
 #delete-user-btn {
-    text-transform: underline;
+    text-decoration: underline;
     background-color: transparent;
     border: none;
     color: var(--title-color);
+    margin-left: 10px;
 }
 .actions-user-btns {
-    display: flex;
-    gap: 4px;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    /* text-decoration: underline; */
+ text-align: center;
+   
 }
-/* search part */
+.actions-user-btns:hover{
+    background-color: var(--text-color);
+}
+

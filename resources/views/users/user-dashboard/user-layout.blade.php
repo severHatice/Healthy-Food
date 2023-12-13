@@ -28,7 +28,8 @@
     {{-- custom card-container css --}}
     <link rel="stylesheet" href="{{ asset('css/recipes/card-container.css') }}">
 
-        
+            {{-- footer link --}}
+    <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
     {{-- tailwind library --}}
     <script src="https://cdn.tailwindcss.com"></script>
     {{-- <script src="//unpkg.com/alpinejs" defer></script> --}}
@@ -82,18 +83,18 @@
                                             <a class="nav-link" href="/">Home</a>
                                         </li>
 
-                                        <li class="nav-item">
+                                        {{-- <li class="nav-item">
                                             <a class="nav-link" href="#">notifications</a>
-                                        </li>
+                                        </li> --}}
                                         <li class="nav-item">
                                             <a class="nav-link" href="#recipes">Recipes</a>
                                         </li>
-                                        <li class="notifications-mail">
+                                        {{-- <li class="notifications-mail">
                                             <a href="#" class="site-cart">
                                                 <i class="fa-solid fa-envelope"></i>
                                                 <span class="count">2</span>
                                             </a>
-                                        </li>
+                                        </li> --}}
                                     </ul>
                                     <div class="sign_btn"><a href="{{ route('createRecipeForm') }}">Create Recipes</a>
                                     </div>
@@ -133,7 +134,9 @@
     </script>
 
 
-
+{{-- <footer>
+    @extends('partials/footer');
+</footer> --}}
 </body>
 
 </html>

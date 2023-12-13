@@ -17,12 +17,14 @@ class RecipeFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => $this->faker->sentence(),
-            'total_calories' => random_int(200, 1000),
+            'user_id' => $this->faker->numberBetween(4, 26), 
+            'title' => $this->faker->sentence,
+            'images' => json_encode(['path/to/fake/image.jpg']), 
+            'description' => $this->faker->paragraph,
+            'total_calories' => $this->faker->numberBetween(100, 1000),
             'total_time' => $this->faker->time(),
-            //'images' => $this->faker->image(),
-            'category' => 'Breakfast',
-            'description' => $this->faker->paragraphs(5, true)
+            'category' => $this->faker->randomElement(['Breakfast', 'Lunch', 'Dinner', 'Dessert']),
+            'is_liked' => $this->faker->numberBetween(0, 100),
             
         ];
     }

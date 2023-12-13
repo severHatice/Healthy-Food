@@ -7,19 +7,19 @@
     <div class="adminpage-cards card-users" style="width: 18rem;">
         <div class="card-body">
           <h5 class="card-title">Users</h5>
-          <a href="{{ route('users')}}" class="btn">View</a>
+          <a href="{{ route('users')}}" class="btn-btn" id="admin-user-management-btn">View</a>
         </div>
       </div>
       <div class="adminpage-cards card-recipe" style="width: 18rem;">
         <div class="card-body">
           <h5 class="card-title">Recipes</h5>
-          <a href="#" class="btn ">View</a>
+          <a href="#" class="btn-btn " id="admin-user-management-btn">View</a>
         </div>
       </div>
       <div class="adminpage-cards card-review" style="width: 18rem;">
         <div class="card-body">
-          <h5 class="card-title">Reviews</h5>
-          <a href="#" class="btn">View</a>
+          <h5 class="card-title">Ratings</h5>
+          <a href="#" class="btn-btn" id="admin-user-management-btn">View</a>
         </div>
       </div>
 </div>

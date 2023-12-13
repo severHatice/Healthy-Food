@@ -200,7 +200,7 @@ public function deleteRecipe(Recipe $recipe)
 public function homepage(Request $request) {
     $searchTerm = $request->input('searchform');
     $recipes = Recipe::search($searchTerm)
-                     ->paginate(5);
+                     ->paginate(8);
     return view('homepage', compact('recipes')); 
 }
 // get recipes from categories
@@ -231,4 +231,11 @@ public function comment(recipe $recipe, Request $request): RedirectResponse
 
     return back()->withStatus('Commentaire publié !');
 }
+
+// public function getAllRecipes()
+// {
+//     $recipes = Recipe::paginate(10); 
+//     return view('recipes.recipeloop', compact('recipes'));
+// }
+
 }

@@ -21,7 +21,8 @@
                 </div>
             </form> --}}
             <ul class="sidebar-menu" data-widget="tree">
-                <li class="header">DASHBOARD</li>
+                <li class="header">ADMIN DASHBOARD</li>
+                          <li style="text-align:center"> <a href="/">Home</a></li>
 
                 <li class="treeview">
                     <a href="#">

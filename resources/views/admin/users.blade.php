@@ -25,7 +25,7 @@
                             <td>{{ $user->id }}</td>
                             <td>{{ $user->username }}</td>
                             <td>{{ $user->email }}</td>
-                            <td>
+                            <td class="make-admin-container">
                                 @if ($user->admin)
                                     Admin
                                 @else
@@ -40,15 +40,16 @@
                             <td>{{ $user->daily_calorie_target }}</td>
 
                             <td class="actions-user-btns">
-
+                                @if (!$user->admin)
                                 <a href="{{ route('editUserForm', $user->id) }}" id="edit-user-btn">Edit</a>
                                 <form action="{{ route('delete', $user->id) }}" method="POST"
                                     style="display: inline-block;">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" id="delete-user-btn"
-                                        onclick="return confirm('Are you sure?')">Delete</button>
+                                        onclick="return confirm('Are you sure to delete this user?')">Delete</button>
                                 </form>
+                                @endif
                             </td>
                         </tr>
                     @endforeach

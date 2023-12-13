@@ -12,13 +12,13 @@
 
 .admin-content {
     flex-grow: 1;
-    padding: 20px;
+    padding: 0px;
     background-color: var(--text-color);
 }
 
 .admin-dashboard-sidebar {
     background-color: var(--text-color);
-    height: 100vh;
+    /* height: 100vh; */
     width: 230px;
 }
 
@@ -96,13 +96,22 @@
     align-items: center;
     margin-top: 100px;
 }
+.card-title h5{
+
+}
+#admin-user-management-btn{
+    width: 120px;
+    height: 40px;
+    text-align: center;
+    color: var(--title-color);
+    background-color: var(--text-color);
+    text-decoration: none;
+}
 .adminpage-cards:hover {
     transform: scale(1.1);
 }
 .adminpage-cards {
     box-shadow: 10px 10px 10px var(--bg-color);
-    background-position: center;
-    background-size: cover;
     height: 200px;
     padding: 10px;
     border-radius: 10px;
@@ -112,20 +121,27 @@ color:var(--icons-color)
 }
 .card-users {
     background: url(/images/admin/users2.jpg);
+    background-position: center;
+    background-size: cover;
 }
 .card-review {
     background: url(/images/admin/review.jpg);
+    background-position: center;
+    background-size: cover;
 }
 .card-recipe {
     background: url(/images/admin/recipes.jpg);
+    background-position: center;
+    background-size: cover;
 }
 .card-body {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
     justify-content: center;
     align-items: center;
-    color: var(--text-color);
+    color: var(--title-color);
+    font-size: 1.4em;
 }
 .btn {
     padding: 10px;
@@ -147,17 +163,42 @@ color:var(--icons-color)
         color: var(--text-color); 
         margin-right: 5px; 
     }
-    
-
-@media (max-width: 767px) {
     .main-sidebar {
-        position: fixed;
+        /* position: fixed; */
         top: 0;
         left: -230px;
         transition: left 0.3s;
     }
-
-    .main-sidebar.active {
+ 
+    
+@media (min-width: 720px) {
+    .main-sidebar {
+        position: fixed;
+        top: 0;
         left: 0;
+        transition: left 0.3s; 
+    }
+
+    .admin-content {
+        margin-left: 30px; 
+        overflow-x: auto; 
     }
 }
+@media (min-width: 942px) {
+    .main-sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 240px;
+    }
+
+    .admin-content {
+        margin-left: 0px;
+        padding-left:30px;
+        overflow-x: auto; 
+     height: 100vh;
+    }
+
+}
+
+
