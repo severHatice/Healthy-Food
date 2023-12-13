@@ -1,15 +1,9 @@
     <div class="footer-section">
     <div class="container">
-        {{-- <div class="footer-cta pt-5 pb-5">
-            <div class="row">
-            </div>
-        </div> --}}
         <div class="footer-content pt-5 pb-5">
             <div class="row">
                 <div class="col-xl-4 col-lg-4 mb-50">
-                    <div class="footer-widget">
-                        
-                        
+                    <div class="footer-widget">    
                         <div class="footer-social-icon">
                             <span>Follow us</span>
                             <a href="#"><i class="fab fa-facebook-f facebook-bg"></i></a>

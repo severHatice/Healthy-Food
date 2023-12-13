@@ -60,7 +60,7 @@
                         <div class="full">
                             <div class="center-desk">
                                 <div class="logo">
-                                    <a href="index.html"><img src="/images/logo5.png" alt="#" /></a>
+                                    <a href="index.html"><img src="/images/logoFinal.png" alt="#" /></a>
                                 </div>
                             </div>
                         </div>
