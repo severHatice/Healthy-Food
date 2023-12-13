@@ -85,7 +85,7 @@
                                     <li><a href="/">Home</a></li>
                                     <li><a href="#recipes">Recipes</a></li>
                                     <li><a href="#about">About</a></li>
-                                    <li><a href="#calorieTracker">Calories</a></li>
+                                    <li><a id="caloryTracker" href="#caloryTracker">Calory Tracker</a></li>
                                     <li><a href="#contact">Contact</a></li>
                                     @auth
                                         <li><a href="/user/dashboard">{{ Auth::user()->username }}</a></li>
@@ -94,7 +94,7 @@
                                         @endif
 
                                         <li class="notifications-mail">
-                                            <a href="#" class="site-cart">
+                                            <a href="/inbox" class="site-cart">
                                                 <i class="fa-solid fa-envelope"></i>
                                                 <span class="count">2</span>
                                             </a>
@@ -126,7 +126,7 @@
     </main>
 
     <footer>
-        @extends('partials/footer');
+        @extends('partials/footer')
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">

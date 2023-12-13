@@ -1,11 +1,11 @@
-/* ul {
-    margin: 0px;
-    padding: 0px;
-} */
-
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 .footer-section {
   font-family: robot;
-  background:  #f4a460;
+  background:  var(--text-color);
   position: relative;
 }
 .footer-cta {

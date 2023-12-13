@@ -32,3 +32,13 @@ return [
     ],
 
 ];
+
+
+return [
+
+
+    'edamam' => [
+        'app_id' => env('dbdc8ad0'),   // Fetch value from .env file
+        'app_key' => env('4b4fa06145de0ae1f97a6a4d7903c97d'), // Fetch value from .env file
+    ],
+];

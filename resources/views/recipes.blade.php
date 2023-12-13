@@ -1,6 +1,6 @@
 <!-- resources/views/recipes.blade.php -->
 
-@extends('layouts.app') {{-- قم بتحديد الملف الخاص بتخطيط التطبيق --}}
+@extends('layout') {{-- قم بتحديد الملف الخاص بتخطيط التطبيق --}}
 @section('content')
 
     <div class="container">
