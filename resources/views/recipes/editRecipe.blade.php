@@ -2,8 +2,8 @@
 
 @section('content')
     <div class="recipe-edit-container">
-        <h1>Edit Recipe</h1>
-        <form action="{{ route('recipe.update', $recipe->id) }}" method="POST" enctype="multipart/form-data">
+        <h1 class="edit-title">Edit Recipe</h1>
+        <form class="edit-form" action="{{ route('recipe.update', $recipe->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
 
@@ -21,7 +21,7 @@
                     <input type="text" name="ingredients[]" value="{{ $ingredient }}">
                 @endforeach
             </div>
-            <button type="button" onclick="addIngredient()" class="btn">Add Ingredient</button>
+            <button type="button" onclick="addIngredient()" class="add-ingredients-btn">Add Ingredient</button>
 
 
             <div class="form-group">
@@ -61,7 +61,11 @@
                     </div>
                 @endif
             </div>
-            <button type="submit" class="btn btn-primary">Update Recipe</button>
+            <div class="edit-buttons">
+            <button type="button" onclick="window.history.back()" class="btn-btn back-btn">Back</button>
+
+            <button id="edit-recipe-btn" type="submit" class="btn-btn">Update Recipe</button>
+        </div>
         </form>
     </div>
 @endsection

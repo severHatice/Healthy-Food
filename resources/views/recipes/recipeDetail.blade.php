@@ -69,7 +69,7 @@
 
                     <h2 class="recipe-content-titles">Directions</h2>
                     <p class="recipe-description">{{ $mainDescription }}</p>
-                    
+
                     {{--form for comments--}}
 
                     @auth
@@ -107,20 +107,32 @@
                                 </div>
                             </div>
                         @endforeach
-                        <div class="buttons-detail-recette ">
-                            <div class="col-4 ">
-                                <a href="{{ route('recipe.edit', $recipe->id) }}" class="btn-btn recipe-edit-btn w-100">Edit</a>
-                            </div>
-                            <form action="{{ route('recipe.delete', $recipe->id) }}" method="POST" class="col-4 mt-0 delete-btn-container">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="recipe-delete-btn w-100">Delete</button>
-                            </form>
+                    
+                   
+
+                    
+
+                   {{-- TODO: DONEauth yap sadece kisi kendi recipe ini silebilsin edit edebilsin. --}}
+                   {{-- Only show edit and delete buttons if the current authenticated user is the creator of the recipe --}}
+@if (auth()->user() && auth()->user()->id == $recipe->user_id)
+                    <div class="buttons-detail-recette ">
+                        <div class="col-4 ">
+                            <a href="{{ route('recipe.edit', $recipe->id) }}" class="btn-btn recipe-edit-btn w-100">Edit</a>
                         </div>
+                        <form action="{{ route('recipe.delete', $recipe->id) }}" method="POST" class="col-4 mt-0 delete-btn-container">
+                            @csrf
+                            @method('DELETE')
+                            <button  onclick="return confirm('Are you sure to delete this user?')" type="submit" class="recipe-delete-btn w-100">Delete</button>
+                        </form>
                     </div>
-                 </div>
-             </div>
+                    @endif
+                </div>
+
+
+
+            </div>
         </div>
+    </div>
   
     </section>
 
@@ -189,8 +201,8 @@
     
     
     
-    // {{-- rating part update script --}}
-    // {{-- <script>
+    {{-- rating part update script --}}
+     {{-- <script>
     //     $(document).ready(function() {
     //         $('.rate-star').click(function(e) {
     //             e.preventDefault();
@@ -232,7 +244,7 @@
     //     });
     // </script> --}}
 
-    // {{-- when clicked icon heart to like it, we take event and connect db with ajax --}}
+     {{-- when clicked icon heart to like it, we take event and connect db with ajax --}}
     <script>
         $(document).ready(function() {
             $('.like-icon button').click(function(e) {

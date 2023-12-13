@@ -120,4 +120,5 @@ Route::get('/calorieTracker', [CaloryController::class, 'getDailyCalories']);
 Route::get('/recipes/category/{category}', [RecipeController::class, 'getRecipesByCategory']);
 
 Route::post('/{recipe}/comment', [RecipeController::class, 'comment'])->name('recipe.comment');
-
+// get all recipes for category all button
+// Route::get('/recipes/all', [RecipeController::class, 'getAllRecipes']);

@@ -12,7 +12,7 @@
                                 Monitor your daily intake, set your calorie goals, and let us guide you on a
                                 personalized journey to nutritional balance and health.
                                 Enjoy eating smart, living well.</p>
-                            <button href="" class=" btn-btn">Click here</button>
+                            {{-- <button href="" class=" btn-btn">Click here</button> --}}
                         </div>
                     </div>
 
