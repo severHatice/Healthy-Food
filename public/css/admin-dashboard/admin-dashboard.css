@@ -198,6 +198,12 @@ color:var(--icons-color)
         overflow-x: auto; 
      height: 100vh;
     }
+    /* .special-grid{
+        width:300px;
+    }
+    .special-list{
+        width:300px; 
+    } */
 
 }
 

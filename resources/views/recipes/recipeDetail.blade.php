@@ -122,7 +122,7 @@
                         <form action="{{ route('recipe.delete', $recipe->id) }}" method="POST" class="col-4 mt-0 delete-btn-container">
                             @csrf
                             @method('DELETE')
-                            <button  onclick="return confirm('Are you sure to delete this user?')" type="submit" class="recipe-delete-btn w-100">Delete</button>
+                            <button  onclick="return confirm('Are you sure to delete this recipe?')" type="submit" class="recipe-delete-btn w-100">Delete</button>
                         </form>
                     </div>
                     @endif
