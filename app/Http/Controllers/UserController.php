@@ -91,7 +91,7 @@ class UserController extends Controller
 public function index(Request $request)
 {
     $searchTerm = $request->input('searchform');
-    $users = User::search($searchTerm)->paginate(3);
+    $users = User::search($searchTerm)->paginate(10);
     return view('admin.users', compact('users'));
 }
 
@@ -122,7 +122,7 @@ public function index(Request $request)
     
         $user->update($validatedData);
     
-        return back()->with('success', 'User updated successfully');
+        return redirect()->route('users')->with('success', 'User updated successfully');
     }
     // delete user as admin
     public function deleteUserForm($id)

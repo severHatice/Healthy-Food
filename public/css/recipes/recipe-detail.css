@@ -166,6 +166,52 @@
     text-align: center;
 }
 
-    
+   #edit-recipe-btn{
+    color: var(--title-color);
+   } 
+   .add-ingredients-btn{
+  text-decoration: underline;
+  color: var(--title-color);
+  font-weight: 400;
+   }
+   .recipe-edit-container{
+    color: var(--title-color);
+    background-color: var(--bg-color);
+    margin-bottom: 20px;
+   }
+   .edit-title{
+    font-size:1.6em;
+    color: var(--title-color);
+ text-align: center;
+ padding-top: 40px;
+
+   }
+   .edit-form{
+    background-color: var(--text-color);
+    margin-top:30px;
+}
+.back-btn{
+    color: var(--title-color);
+}
+.edit-buttons{
+    display: flex;
+}
+.recipe-edit-container{
+       padding-bottom: 40px;
+
+   }
+
+.form-control {
+    color: var(--bg-color);
+    background-color: #f8f8f8; 
+  
+}
+
+.form-control:focus {
+    border-color: var(--title-color); 
+    color:var(--title-color);
+   
+}
+
 
 

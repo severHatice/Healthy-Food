@@ -69,38 +69,47 @@
 
 <script>
  // dublicate the container of recipes ---the buttons of category???
-function filterRecipes(category) {
- axios.get('/recipes/category/' + category)
-     .then(function (response) {
-         const specialList = document.querySelector('.special-list');
-         if (specialList) {
+ function filterRecipes(category) {
+    // Redirect to homepage for 'All' category
+    if (category === 'All') {
+        window.location.href = '/';
+        return;
+    }
 
-             while (specialList.firstChild) {
-                 specialList.removeChild(specialList.firstChild);
-             }
+    let url = '/recipes/category/' + category;
 
-             const tempDiv = document.createElement('div');
-             tempDiv.innerHTML = response.data;
-             const newContent = tempDiv.querySelector('.menu-box') || tempDiv;
+    axios.get(url)
+        .then(function (response) {
+            const specialList = document.querySelector('.special-list');
+            if (specialList) {
+                // Clear existing content
+                while (specialList.firstChild) {
+                    specialList.removeChild(specialList.firstChild);
+                }
 
-             specialList.appendChild(newContent);
-         }
-     })
-     .catch(function (error) {
-         console.error('Error:', error);
-     });
+                // Append new content
+                const tempDiv = document.createElement('div');
+                tempDiv.innerHTML = response.data;
+                const newContent = tempDiv.firstChild;
+
+                specialList.appendChild(newContent);
+            }
+        })
+        .catch(function (error) {
+            console.error('Error:', error);
+        });
 }
 
-
 document.addEventListener('DOMContentLoaded', function() {
- document.querySelectorAll('.filter-button-group button').forEach(function(button) {
-     button.addEventListener('click', function() {
-         document.querySelectorAll('.filter-button-group button').forEach(btn => btn.classList.remove('active'));
-         this.classList.add('active');
-         let category = button.getAttribute('data-filter');
-         filterRecipes(category);
-     });
- });
+    document.querySelectorAll('.filter-button-group button').forEach(function(button) {
+        button.addEventListener('click', function() {
+            document.querySelectorAll('.filter-button-group button').forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            let category = button.getAttribute('data-filter');
+            filterRecipes(category);
+        });
+    });
 });
+
 
 </script>

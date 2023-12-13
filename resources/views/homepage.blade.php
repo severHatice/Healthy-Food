@@ -17,9 +17,9 @@
     @include('homepage.about')
 </section>
 
-<section id="contact">
+{{-- <section id="contact">
 <a name="contact"></a>
 @include('homepage.contact')
-</section>
+</section> --}}
 
 @endsection

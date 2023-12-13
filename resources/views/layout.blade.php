@@ -47,11 +47,6 @@
     {{-- custon css --}}
     <link rel="stylesheet" href="{{ asset('css/homepage/contact.css') }}">
 
-    <!--Theme Responsive css-->
-    <link rel="stylesheet" href="{{ asset('css/responsive.css') }}" />
-    {{-- custom card-recipe css --}}
-    <link rel="stylesheet" href="{{ asset('css/card-recipe.css') }}">
-
     {{-- footer link --}}
     <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
 
@@ -63,6 +58,7 @@
     {{-- custom card-container css --}}
     <link rel="stylesheet" href="{{ asset('css/recipes/card-container.css') }}">
     <link rel="stylesheet" href="{{asset('css/recipes/recipe-detail.css')}}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
         {{-- tailwind library --}}
         <script src="https://cdn.tailwindcss.com"></script>
@@ -86,19 +82,19 @@
                                     <li><a href="#recipes">Recipes</a></li>
                                     <li><a href="#about">About</a></li>
                                     <li><a id="caloryTracker" href="#caloryTracker">Calory Tracker</a></li>
-                                    <li><a href="#contact">Contact</a></li>
+                                    {{-- <li><a href="#contact">Contact</a></li> --}}
                                     @auth
                                         <li><a href="/user/dashboard">{{ Auth::user()->username }}</a></li>
                                         @if (Auth::user()->admin)
                                             <li><a href="/admin/dashboard">Dashboard</a></li>
                                         @endif
 
-                                        <li class="notifications-mail">
+                                        {{-- <li class="notifications-mail">
                                             <a href="/inbox" class="site-cart">
                                                 <i class="fa-solid fa-envelope"></i>
                                                 <span class="count">2</span>
                                             </a>
-                                        </li>
+                                        </li> --}}
 
                                         <form method="POST" action="/logout">
                                             @csrf
