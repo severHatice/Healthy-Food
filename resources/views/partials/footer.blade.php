@@ -20,8 +20,8 @@
                         <ul>
                             <li><a href="/">Home</a></li>
                             <li><a href="#about">about</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#contact">Contact us</a></li>
+                            <li><a href="#">Recipes</a></li>
+                            <li><a href="#contact">Calory Tracker</a></li>
                         </ul>
                     </div>
                 </div>

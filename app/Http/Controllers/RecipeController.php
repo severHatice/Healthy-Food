@@ -206,7 +206,7 @@ public function homepage(Request $request) {
 // get recipes from categories
 public function getRecipesByCategory($category)
 {
-    $recipes = Recipe::where('category', $category)->paginate(2);
+    $recipes = Recipe::where('category', $category)->paginate(8);
     // ddd($recipes);//TODO:recipes come once as wished but buttons of category dublicated
     return view('recipes.recipeloop', compact('recipes'));
 }

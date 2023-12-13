@@ -163,20 +163,34 @@ button[data-filter] {
 }
 
 @media screen and (min-width: 1050px) {
-    .menu-box {
-        /* padding: 70px 50px;  */
-    }
-    .special-grid{
-        /* width:400px !important */
-    }
+    /* .menu-box {
+        padding: 70px 50px; 
+    } */
+    /* .special-grid{
+      
+    } */
     .special-grid.drinks{
         margin:10px 0px;
+        /* display: flex !important;
+        flex-direction: row !important; */
          
      }
-     .gallery-single{
-         /* width:300px !important */
+     /* .gallery-single{
+      
+     } */
+     .special-list{
+        display: flex !important;
+        flex-direction: row !important; 
      }
+
     
+}
+@media (min-width: 768px)
+ {
+    .col-sm-10{
+
+        width: 33.33333333% !important;
+    }
 }
 
 
