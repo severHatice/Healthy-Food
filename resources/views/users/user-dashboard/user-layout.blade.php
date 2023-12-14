@@ -87,7 +87,7 @@
                                             <a class="nav-link" href="#">notifications</a>
                                         </li> --}}
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#recipes">Recipes</a>
+                                            <a class="nav-link" href="/user/dashboard   ">Recipes</a>
                                         </li>
                                         {{-- <li class="notifications-mail">
                                             <a href="#" class="site-cart">

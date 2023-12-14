@@ -77,8 +77,9 @@ class RecipeController extends Controller
     // Show a single recipe
     public function showRecipe(Recipe $recipe,Request $request)
     {
-        $ref = $request->query('ref', 'default');//we added this one to oriante user to show recipe detail.if
-        // he is in homepage he will see detail there. if he is in his own page,it vill show detail in his page
+        $ref = $request->query('ref', 'default');//we added this one to oriante user to display recipe detail.
+        // if user  display detail of user and he is in homepage , he will see detail there. 
+        // if user is in his own layout,he will see detail of recipe in his page.
         $descriptionParts = explode("\n\nIngredients:\n", $recipe->description);
         $mainDescription = $descriptionParts[0];
         $ingredientsList = isset($descriptionParts[1]) ? explode("\n", $descriptionParts[1]) : [];
@@ -185,7 +186,7 @@ public function updateRecipe(Request $request, Recipe $recipe)
         'category' => $validatedData['category'],
     ]);
 
-    return redirect()->route('recipe-detail.show', $recipe->id)->with('message', 'Recipe updated successfully!');
+    return redirect()->route('recipe-detail.show', $recipe->id);
 }
 
 

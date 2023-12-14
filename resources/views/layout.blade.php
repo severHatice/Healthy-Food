@@ -84,7 +84,7 @@
                                     <li><a id="caloryTracker" href="#caloryTracker">Calory Tracker</a></li>
                                     {{-- <li><a href="#contact">Contact</a></li> --}}
                                     @auth
-                                        <li><a href="/user/dashboard">{{ Auth::user()->username }}</a></li>
+                                        <li><a href="/user/dashboard">{{  ucfirst(Auth::user()->username) }}</a></li>
                                         @if (Auth::user()->admin)
                                             <li><a href="/admin/dashboard">Dashboard</a></li>
                                         @endif
