@@ -5,7 +5,7 @@
                 <div class="main_slider text-center">
                     <div class="col-md-12">
                         <div class="main_slider_content wow zoomIn" data-wow-duration="1s">
-                            <h1>Calorie Smart Eating</h1>
+                            <h1>Let's Cook! </h1>
                             <p>Welcome to our culinary world, where every meal is a step towards wellness.
                                 Our platform not only offers delicious recipes but also empowers you with real-time
                                 calorie tracking.

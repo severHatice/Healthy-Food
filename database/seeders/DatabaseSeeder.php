@@ -25,8 +25,8 @@ class DatabaseSeeder extends Seeder
 
         // Génération de 10 utilisateurs aléatoires
         // $randomUsers = User::factory(20)->create();
-        // User::factory(20)->create();
-        $this->call(RecipeSeeder::class);
+        // User::factory(10)->create();
+        $this->call(UserSeeder::class);
 
 
         // Création d'une collection avec l'utilisateur spécifique

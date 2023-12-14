@@ -1,6 +1,9 @@
 ## php artisan storage:link
 ## To display images in a Laravel project, first run php artisan storage:link to create a symbolic link between storage/app/public and public/storage. Then, store images in public/storage/recipe_images. Finally, use the asset function in Blade templates to correctly reference the images, like asset('storage/' . json_decode($recipe->images)[0]).
 
+## php artisan vendor:publish --tag=laravel-pagination
+## To customize pagination and search bar, you first needed to publish these views to your application's resources/views/vendor directory. For pagination, the command might look something like this:
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">

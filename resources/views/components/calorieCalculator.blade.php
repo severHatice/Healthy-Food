@@ -67,6 +67,7 @@
         left: 17%;
         padding-bottom: 35px;
         padding-top: 35px;
+        top: -20px;
 
     }
 
@@ -86,14 +87,17 @@
         align-content: right;
 
         gap: 20px;
+        top: -50px;
 
 
     }
 
     #calorieDiv {
-        height: 681px;
+        padding-top: 20px;
+        height: 675px;
         position: relative;
         left: -0px;
+
 
 
     }
@@ -112,9 +116,10 @@
     }
 
     .calender {
+        z-index: +1;
         font-family: Verdana, sans-serif;
         position: relative;
-        top: -265px;
+        top: -255px;
         border-radius: 60px;
         width: 60%;
         left: 15%;
